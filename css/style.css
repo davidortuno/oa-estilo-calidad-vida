@@ -1,0 +1,233 @@
+:root {
+  --gris-texto: #202128;
+  --blanco-texto: #F1F1F1;
+  --verde-obscuro: #55591D;
+  --verde-pachh: #BBC447;
+  --verde-claro: #EBEEC9;
+  --naranja-obscuro: #6A2D0C;
+  --naranja-pachh: #EB844C;
+  --naranja-claro: #FCEFE8;
+  --azul-obscuro: #1E5755;
+  --azul-pachh: #40B8B3;
+  --azul-claro: #CAECEB;
+  --morado-obscuro: #4A2B48;
+  --morado-pacch: #6E3F6A;
+  --morado-claro: #E5D2E3;
+  --blanco-total: #FFFFFF;
+  --negro-total: #000000;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+/* [data-theme="light"] {
+}
+
+[data-theme="dark"] {
+} */
+
+body {
+  font-family: neulis-sans, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.125rem;
+  color: var(--gris-texto);
+}
+
+h1 {
+  font-family: neulis-neue, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 6rem;
+  font-variant-ligatures: none;
+  font-feature-settings: "swsh" 1;
+}
+
+/* Inicia Index */
+a {
+  color: var(--verde-pachh);
+  text-decoration: none;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+a:hover {
+  color: var(--verde-obscuro);
+}
+
+.no-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/*
+ * Inicia Header
+ */
+
+.botones-header div {
+  padding-right: 1.25rem;
+}
+
+/* .botones-header ul li {
+  padding-right: 1.25rem;
+} */
+
+.btn-chico {
+  padding: 5px 20px;
+  border-radius: 99999px;
+}
+
+.btn.btn-primary {
+  font-size: 1rem;
+}
+
+.btn-verde-claro {
+  color: var(--verde-obscuro);
+  background-color: var(--verde-claro);
+  border-color: var(--verde-claro);
+  text-transform: uppercase;
+}
+
+
+.btn-verde-claro:hover,
+.btn.btn-verde-claro.show,
+.btn.btn-verde-claro:first-child:active {
+  color: var(--blanco-texto);
+  background-color: var(--verde-obscuro);
+  border-color: var(--verde-obscuro);
+}
+
+.btn.btn-verde-claro.show,
+.btn.btn-verde-claro:first-child:active {
+  color: var(--verde-obscuro);
+  background-color: var(--verde-claro);
+  border-color: var(--verde-claro);
+}
+
+.btn-verde-obscuro {
+  color: var(--blanco-texto);
+  background-color: var(--verde-obscuro);
+  border-color: var(--verde-obscuro);
+  text-transform: uppercase;
+}
+
+.btn-verde-obscuro:hover {
+  color: var(--verde-obscuro);
+  background-color: var(--verde-claro);
+  border-color: var(--verde-claro);
+}
+
+.btn.btn-verde-obscuro.show,
+.btn.btn-verde-obscuro:first-child:active {
+  color: var(--blanco-texto);
+  background-color: var(--verde-obscuro);
+  border-color: var(--verde-obscuro);
+}
+
+
+.logo-header-pacch img {
+  height: 2.25rem;
+  margin-left: 1rem;
+}
+
+.logo-header-unam img {
+  height: 2.25rem;
+}
+
+.logo-header-cch img {
+  height: 2.25rem;
+  margin-left: 1rem;
+}
+
+.navbar-oa-pacch {
+  background-color: var(--blanco-texto);
+  margin-top: 0.625rem;
+  padding: 0.875rem 1.25rem;
+  border-radius: 1.25rem;
+}
+
+.redes-header {
+  display: flex;
+  align-items: center;
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--gris-texto);
+}
+
+.redes-header p {
+  font-family: neulis-cursive, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0 0.938rem 0 0;
+  font-size: 1rem;
+}
+
+.redes-header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.redes-header ul li {
+  display: inline-block;
+  vertical-align: middle;
+  /* font-size: 1.25rem; */
+  margin: 0 0.313rem;
+}
+
+.redes-header ul li a {
+  display: block;
+  text-decoration: none;
+}
+
+.redes-header ul li:last-child {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.redes-header ul li a i {
+  color: var(--gris-texto);
+}
+
+.redes-header ul li a:hover i,
+.redes-header ul li a:focus i {
+  color: var(--verde-pachh);
+}
+
+@media (max-width: 991px) {
+
+  .logo-header-pacch img {
+    margin-left: 0;
+  }
+
+  .redes-header {
+    display: none;
+  }
+
+  .navbar-collapse {
+    padding-top: 0.875rem;
+  }
+
+  .botones-header div:last-child {
+    padding: 0;
+  }
+
+  /* .botones-header ul li {
+    padding: 1.25rem 0 0 0;
+  }
+
+  .botones-header ul li a {
+    width: 100%;
+  } */
+}
