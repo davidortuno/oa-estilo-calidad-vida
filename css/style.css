@@ -47,7 +47,7 @@ h1 {
   font-family: neulis-neue, sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 6rem;
+  font-size: 5rem;
   font-variant-ligatures: none;
   font-feature-settings: "swsh" 1;
 }
@@ -101,7 +101,12 @@ header {
   border-radius: 99999px;
 }
 
-.btn.btn-primary {
+.btn-grande {
+  padding: 10px 20px;
+  border-radius: 99999px;
+}
+
+.btn {
   font-size: 1rem;
 }
 
@@ -146,6 +151,23 @@ header {
   color: var(--blanco-texto);
   background-color: var(--verde-obscuro);
   border-color: var(--verde-obscuro);
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  color: var(--blanco-texto);
+  text-decoration: none;
+  background-color: var(--verde-obscuro);
+}
+
+/* .dropdown-item:focus,
+.dropdown-item:hover {
+  color: var(--verde-obscuro);
+  background-color: var(--verde-claro);
+} */
+
+.dropdown-menu.show {
+  border-color: transparent;
 }
 
 
@@ -400,6 +422,10 @@ hr.linea-footer {
 
 @media (max-width: 991px) {
 
+  body {
+    font-size: 1rem;
+  }
+
   .logo-header-pacch img {
     margin-left: 0;
   }
@@ -416,6 +442,22 @@ hr.linea-footer {
     padding: 0;
   }
 
+  /* .btn {
+    font-size: 0.938rem;
+  } */
+
+  .hero-portada {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .badges-oa-pacch {
+    padding: 40px 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   /* .botones-header ul li {
     padding: 1.25rem 0 0 0;
   }
@@ -423,6 +465,35 @@ hr.linea-footer {
   .botones-header ul li a {
     width: 100%;
   } */
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0;
+  }
+
+  h3 {
+    font-size: 2rem;
+    text-transform: capitalize;
+  }
+
+  .badge.pill-verde {
+    font-size: 0.938rem;
+    padding: 0.313rem 0.625rem;
+  }
+
+  .badges-oa-pacch .badge.pill-verde:first-child {
+    margin: 0 0 10px 0;
+  }
+
+  .objetivo-oa-pacch {
+    padding: 40px 12px;
+    text-align: center;
+  }
+
+  .btn-comenzar-mobile {
+    border-radius: 99999px;
+    text-transform: uppercase;
+  }
 }
 
 @media (max-width: 576px) {
