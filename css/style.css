@@ -316,6 +316,7 @@ header {
   font-family: neulis-cursive, sans-serif;
   font-weight: var(--grosor-light);
   letter-spacing: 1px;
+  margin-top: var(--80px);
 }
 
 .footer-row {
@@ -507,6 +508,62 @@ hr.linea-footer {
 
 /* Termina Introducción */
 
+.paginacion-interior {
+  display: flex;
+  align-items: stretch;
+  flex-flow: row nowrap;
+  gap: 20px;
+  padding-top: var(--20px);
+  border-top: 1px solid var(--gris-texto);
+  font-family: var(--fuente-principal);
+}
+
+.paginacion-interior i {
+  font-size: 0.875rem;
+}
+
+.pag-izq {
+  display: flex;
+  flex-basis: 50%;
+  flex-grow: 1;
+}
+
+.paginacion-interior a {
+  display: flex;
+  flex: 1;
+  flex-flow: column nowrap;
+  gap: 12px;
+  color: var(--gris-texto);
+}
+
+.paginacion-interior a:hover,
+.paginacion-interior a:focus {
+  color: var(--verde-pacch);
+}
+
+.pag-der span {
+  margin-left: auto;
+}
+
+.pag-nav-1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pag-nav-1 span {
+  font-size: 0.875rem;
+}
+
+.pag-nav-2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-family: var(--fuente-cursiva);
+}
+
 /* Inician Media Queries */
 
 @media (max-width: 1200px) {
@@ -646,6 +703,14 @@ hr.linea-footer {
   .intro-tema {
     padding-top: var(--40px);
     padding-bottom: var(--20px);
+  }
+
+  #footer-oa-pacch {
+    margin-top: var(--40px);
+  }
+
+  .pag-nav-2 {
+    display: none;
   }
 }
 
