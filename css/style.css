@@ -451,8 +451,9 @@ hr.linea-footer {
 
 .fondo-oa-introduccion {
   background-color: var(--verde-pacch);
-  padding: 5rem;
+  padding: 5rem 68px;
   border-radius: 1.25rem;
+  margin: 0;
 }
 
 .hero-introduccion {
@@ -681,7 +682,7 @@ hr.linea-footer {
   }
 
   .fondo-oa-introduccion {
-    padding: var(--20px);
+    padding: var(--20px) 8px;
   }
 
   .texto-introduccion {
