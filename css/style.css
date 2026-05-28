@@ -78,6 +78,13 @@ h3 {
   text-transform: uppercase;
 }
 
+h4 {
+  font-family: neulis-neue, sans-serif;
+  font-weight: var(--grosor-negrita);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
 /* Inicia Index */
 a {
   color: var(--verde-pacch);
@@ -451,7 +458,7 @@ hr.linea-footer {
 
 .fondo-oa-introduccion {
   background-color: var(--verde-pacch);
-  padding: 5rem 68px;
+  padding: 5rem;
   border-radius: 1.25rem;
   margin: 0;
 }
@@ -504,10 +511,12 @@ hr.linea-footer {
 
 .intro-tema {
   padding-top: var(--80px);
-  padding-bottom: var(--40px);
+  padding-bottom: var(--80px);
 }
 
 /* Termina Introducción */
+
+/* Inicia Paginación Interior */
 
 .paginacion-interior {
   display: flex;
@@ -564,6 +573,21 @@ hr.linea-footer {
   font-size: 1rem;
   font-family: var(--fuente-cursiva);
 }
+
+/* Termina Paginación Interior */
+
+/* Inicia Quiz */
+
+#quiz1 {
+  max-width: 100%;
+  width: 100%;
+  background: #F1F1F1;
+  padding: 5rem;
+  border-radius: var(--20px);
+  margin-top: var(--40px);
+}
+
+/* Terminar Quiz */
 
 /* Inician Media Queries */
 
@@ -650,6 +674,10 @@ hr.linea-footer {
     text-transform: capitalize;
   }
 
+  h4 {
+    font-size: 1.25rem;
+  }
+
   .badge.pill-verde {
     font-size: 0.938rem;
     padding: var(--5px) var(--10px);
@@ -682,7 +710,7 @@ hr.linea-footer {
   }
 
   .fondo-oa-introduccion {
-    padding: var(--20px) 8px;
+    padding: var(--20px);
   }
 
   .texto-introduccion {
@@ -703,7 +731,7 @@ hr.linea-footer {
 
   .intro-tema {
     padding-top: var(--40px);
-    padding-bottom: var(--20px);
+    padding-bottom: var(--40px);
   }
 
   #footer-oa-pacch {
