@@ -291,16 +291,28 @@ header {
   font-weight: var(--grosor-normal);
   border-radius: 0.625rem;
   border-bottom-left-radius: 0;
+  color: var(--blanco-texto);
 }
 
-.pill-verde {
+.pill-verde-portada {
   color: var(--gris-texto);
   background-color: var(--verde-pacch);
 }
 
 .pill-naranja {
-  color: var(--blanco-texto);
   background-color: var(--naranja-obscuro);
+}
+
+.pill-verde {
+  background-color: var(--verde-obscuro)
+}
+
+.pill-azul {
+  background-color: var(--azul-obscuro);
+}
+
+.pill-morado {
+  background-color: var(--morado-obscuro)
 }
 
 .img-portada {
