@@ -595,7 +595,8 @@ hr.linea-footer {
   margin-bottom: var(--20px);
 }
 
-h4.subtitulo-bibliografia {
+h4.subtitulo-bibliografia,
+h4.subtitulo-creditos {
   font-family: var(--fuente-principal);
   font-weight: var(--grosor-negrita);
   text-transform: capitalize;
@@ -622,8 +623,63 @@ h4.subtitulo-bibliografia {
   padding-bottom: var(--10px);
 }
 
-.subtitulo-bibliografia {
+.subtitulo-bibliografia,
+.subtitulo-creditos {
   padding-bottom: var(--80px);
+}
+
+.bloque-creditos-50,
+.bloque-creditos-100 {
+  background-color: var(--blanco-texto);
+  padding: var(--40px);
+  border-radius: var(--20px);
+  text-align: center;
+  margin-bottom: var(--20px);
+}
+
+.bloque-creditos-50 p:last-child,
+.bloque-creditos-100 p:last-child {
+  margin-bottom: 0;
+}
+
+.bloque-creditos-100 h4:not(:first-child) {
+  margin-top: var(--40px);
+
+}
+
+.cita-apa {
+  background-color: var(--verde-claro);
+  padding: var(--40px);
+  border-radius: var(--20px);
+  margin: var(--20px) 0;
+}
+
+.cita-apa p {
+  overflow-wrap: break-word;
+}
+
+.icono-btn {
+  background-color: var(--blanco-texto);
+  border-radius: 100%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  margin-left: var(--20px);
+}
+
+.icono-btn i {
+  font-size: 14px;
+  color: var(--verde-obscuro)
+}
+
+.btn-verde-obscuro:hover .icono-btn {
+  background-color: var(--verde-obscuro);
+}
+
+.btn-verde-obscuro:hover .icono-btn i {
+  color: var(--blanco-texto);
 }
 
 /* Inician Media Queries */
@@ -786,14 +842,25 @@ h4.subtitulo-bibliografia {
     padding: var(--20px);
   }
 
+  .bibliografia .bloque-biblio:not(:last-child) {
+    margin-bottom: var(--10px);
+  }
+
   .bloque-biblio h3 {
     padding-bottom: var(--20px);
     text-transform: uppercase;
     font-size: 1.25rem;
   }
 
-  .subtitulo-bibliografia {
-    padding-bottom: var(--20px);
+  .subtitulo-bibliografia,
+  .subtitulo-creditos {
+    padding-bottom: var(--10px);
+  }
+
+  .bloque-creditos-50,
+  .bloque-creditos-100 {
+    padding: var(--20px);
+    margin-bottom: var(--10px);
   }
 }
 
