@@ -463,7 +463,7 @@ hr.linea-footer {
   margin: 0;
 }
 
-.hero-introduccion {
+.hero-titulo {
   padding-top: 5rem;
   padding-bottom: 0;
   text-align: center;
@@ -511,7 +511,6 @@ hr.linea-footer {
 
 .intro-tema {
   padding-top: var(--80px);
-  padding-bottom: var(--80px);
 }
 
 /* Termina Introducción */
@@ -524,6 +523,7 @@ hr.linea-footer {
   flex-flow: row nowrap;
   gap: 20px;
   padding-top: var(--20px);
+  margin-top: var(--80px);
   border-top: 1px solid var(--gris-texto);
   font-family: var(--fuente-principal);
 }
@@ -588,6 +588,43 @@ hr.linea-footer {
 }
 
 /* Terminar Quiz */
+
+/* Inicia biliografía  */
+
+.bibliografia .bloque-biblio:not(:last-child) {
+  margin-bottom: var(--20px);
+}
+
+h4.subtitulo-bibliografia {
+  font-family: var(--fuente-principal);
+  font-weight: var(--grosor-negrita);
+  text-transform: capitalize;
+  color: var(--verde-obscuro)
+}
+
+.bloque-biblio {
+  background-color: var(--blanco-texto);
+  padding: var(--80px);
+  border-radius: var(--20px);
+}
+
+.bloque-biblio h3 {
+  text-align: center;
+  padding-bottom: var(--40px);
+  margin-bottom: 0;
+}
+
+.bloque-biblio ul {
+  margin-bottom: 0;
+}
+
+.bloque-biblio ul li {
+  padding-bottom: var(--10px);
+}
+
+.subtitulo-bibliografia {
+  padding-bottom: var(--80px);
+}
 
 /* Inician Media Queries */
 
@@ -671,7 +708,6 @@ hr.linea-footer {
 
   h3 {
     font-size: 2rem;
-    text-transform: capitalize;
   }
 
   h4 {
@@ -701,7 +737,7 @@ hr.linea-footer {
     padding: var(--20px) 0 var(--40px) 0;
   }
 
-  .hero-introduccion {
+  .hero-titulo {
     padding-top: var(--40px);
   }
 
@@ -731,15 +767,33 @@ hr.linea-footer {
 
   .intro-tema {
     padding-top: var(--40px);
-    padding-bottom: var(--40px);
   }
 
   #footer-oa-pacch {
     margin-top: var(--40px);
   }
 
+
+  .paginacion-interior {
+    margin-top: var(--40px);
+  }
+
   .pag-nav-2 {
     display: none;
+  }
+
+  .bloque-biblio {
+    padding: var(--20px);
+  }
+
+  .bloque-biblio h3 {
+    padding-bottom: var(--20px);
+    text-transform: uppercase;
+    font-size: 1.25rem;
+  }
+
+  .subtitulo-bibliografia {
+    padding-bottom: var(--20px);
   }
 }
 
