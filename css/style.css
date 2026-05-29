@@ -326,6 +326,60 @@ header {
   border-top-right-radius: 2.5rem;
 }
 
+.circle-btn {
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  transition: .4s all ease-in-out
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: .4s all ease-in-out
+}
+
+text {
+  font-family: var(--fuente-cursiva);
+  font-weight: var(--grosor-negrita);
+  fill: var(--verde-obscuro);
+  font-size: 17px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.arrow line {
+  stroke: var(--blanco-texto);
+  stroke-width: 4;
+  stroke-linecap: round;
+  transition: .4s all ease-in-out
+}
+
+.circle-btn circle {
+  fill: var(--verde-obscuro);
+}
+
+.circle-btn:hover text {
+  animation: rotateText 6s linear infinite;
+}
+
+.circle-btn:hover .arrow {
+  transform: scale(1);
+}
+
+@keyframes rotateText {
+  from {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: 50% 50%;
+  }
+}
+
 /* Termina Portada */
 
 /* Inicia Footer */
