@@ -583,7 +583,7 @@ hr.linea-footer {
 
 /* Inicia Paginación Interior */
 
-.paginacion-interior {
+.paginacion-inferior {
   display: flex;
   align-items: stretch;
   flex-flow: row nowrap;
@@ -594,7 +594,7 @@ hr.linea-footer {
   font-family: var(--fuente-principal);
 }
 
-.paginacion-interior i {
+.paginacion-inferior i {
   font-size: 0.875rem;
 }
 
@@ -604,7 +604,7 @@ hr.linea-footer {
   flex-grow: 1;
 }
 
-.paginacion-interior a {
+.paginacion-inferior a {
   display: flex;
   flex: 1;
   flex-flow: column nowrap;
@@ -612,8 +612,8 @@ hr.linea-footer {
   color: var(--gris-texto);
 }
 
-.paginacion-interior a:hover,
-.paginacion-interior a:focus {
+.paginacion-inferior a:hover,
+.paginacion-inferior a:focus {
   color: var(--verde-pacch);
 }
 
@@ -896,7 +896,7 @@ h4.subtitulo-creditos {
   }
 
 
-  .paginacion-interior {
+  .paginacion-inferior {
     margin-top: var(--40px);
   }
 
