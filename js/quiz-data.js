@@ -24,3 +24,25 @@ $("#quiz1").dlxQuiz({
     ],
   },
 });
+
+$("#quiz2").dlxQuiz({
+  quizData: {
+    questions: [
+      {
+        q: "Cambios hormonales, pubertad, nuevas emociones, desarrollo del cerebro, formación de identidad de género y regulación emocional influida por el contexto.",
+        a: "Individual",
+        options: ["Individual", "Interpersonal", "Comunitario"],
+      },
+      {
+        q: "Interés por la equidad, influencia de valores comunitarios y normas relacionadas con género y edad.",
+        a: "Comunitario",
+        options: ["Individual", "Interpersonal", "Comunitario"],
+      },
+      {
+        q: "Desarrollo de habilidades sociales, mayor presencia en espacios fuera de la familia, relaciones con pares y vínculos románticos.",
+        a: "Interpersonal",
+        options: ["Individual", "Interpersonal", "Comunitario"],
+      },
+    ],
+  },
+});

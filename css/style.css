@@ -30,6 +30,9 @@
   --20px: 1.25rem;
   --40px: 2.5rem;
   --80px: 5rem;
+  /* Bordes */
+  --borde-chico: 1.25rem;
+  --borde-grande: 2.5rem;
 }
 
 *,
@@ -315,8 +318,31 @@ header {
   background-color: var(--morado-obscuro)
 }
 
-.img-portada {
-  border-radius: 2.5rem;
+.verde-obscuro {
+  color: var(--verde-obscuro);
+}
+
+.naranja-obscuro {
+  color: var(--naranja-obscuro)
+}
+
+.azul-obscuro {
+  color: var(--azul-obscuro)
+}
+
+.morado-obscuro {
+  color: var(--morado-obscuro)
+}
+
+.
+
+/* Tamaños */
+  {
+  border-radius: var(--borde-chico);
+}
+
+.borde-grande {
+  border-radius: var(--borde-grande);
 }
 
 .objetivo-oa-pacch {
@@ -575,6 +601,22 @@ hr.linea-footer {
   color: var(--naranja-obscuro);
 }
 
+.card-oa-morado {
+  background-color: var(--morado-claro);
+}
+
+.card-oa-morado a {
+  color: var(--morado-obscuro);
+}
+
+.card-oa-azul {
+  background-color: var(--azul-claro);
+}
+
+.card-oa-azul a {
+  color: var(--azul-obscuro);
+}
+
 .intro-tema {
   padding-top: var(--80px);
 }
@@ -644,7 +686,8 @@ hr.linea-footer {
 
 /* Inicia Quiz */
 
-#quiz1 {
+#quiz1,
+#quiz2 {
   max-width: 100%;
   width: 100%;
   background: #F1F1F1;
@@ -927,6 +970,12 @@ h4.subtitulo-creditos {
   .bloque-creditos-100 {
     padding: var(--20px);
     margin-bottom: var(--10px);
+  }
+
+  #quiz1,
+  #quiz2 {
+    padding: 1.875rem;
+    margin-top: 0;
   }
 }
 
