@@ -334,15 +334,13 @@ header {
   color: var(--morado-obscuro)
 }
 
-.
-
 /* Tamaños */
-  {
-  border-radius: var(--borde-chico);
-}
-
 .borde-grande {
   border-radius: var(--borde-grande);
+}
+
+.borde-chico {
+  border-radius: var(--borde-chico);
 }
 
 .objetivo-oa-pacch {
@@ -688,7 +686,8 @@ hr.linea-footer {
 
 #quiz1,
 #quiz2,
-#quiz3 {
+#quiz3,
+#quiz4 {
   max-width: 100%;
   width: 100%;
   background: #F1F1F1;
@@ -934,6 +933,7 @@ h4.subtitulo-creditos {
 
   .card.card-oa-pacch {
     margin-top: var(--20px);
+    height: auto !important;
   }
 
   .intro-tema {
@@ -980,7 +980,8 @@ h4.subtitulo-creditos {
 
   #quiz1,
   #quiz2,
-  #quiz3 {
+  #quiz3,
+  #quiz4 {
     padding: 1.875rem;
     margin-top: 0;
   }

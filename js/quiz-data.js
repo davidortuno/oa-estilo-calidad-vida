@@ -73,3 +73,30 @@ $("#quiz3").dlxQuiz({
     ],
   },
 });
+
+$("#quiz4").dlxQuiz({
+  quizData: {
+    questions: [
+      {
+        q: "El cuerpo se apaga durante el sueño",
+        a: "Falso",
+        options: ["Falso", "Verdadero"],
+      },
+      {
+        q: "Perder una hora de sueño no afecta el día siguiente",
+        a: "Falso",
+        options: ["Falso", "Verdadero"],
+      },
+      {
+        q: "Nos adaptamos rápido a horarios nuevos",
+        a: "Falso",
+        options: ["Falso", "Verdadero"],
+      },
+      {
+        q: "Selecciona cuántas horas de sueño son recomendadas en la adolescencia",
+        a: "8-10",
+        options: ["6-8", "7-9", "8-10", "9 o más"],
+      },
+    ],
+  },
+});
