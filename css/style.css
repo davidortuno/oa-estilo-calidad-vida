@@ -872,6 +872,10 @@ h4.subtitulo-creditos {
     align-items: center;
   }
 
+  .badges-oa-pacch .badge:first-child {
+    margin-bottom: var(--10px);
+  }
+
   /* .botones-header ul li {
     padding: 1.25rem 0 0 0;
   }
