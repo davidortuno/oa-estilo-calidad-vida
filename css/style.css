@@ -687,7 +687,8 @@ hr.linea-footer {
 #quiz1,
 #quiz2,
 #quiz3,
-#quiz4 {
+#quiz4,
+#quiz5 {
   max-width: 100%;
   width: 100%;
   background: #F1F1F1;
@@ -794,6 +795,19 @@ h4.subtitulo-creditos {
 .intro-subtitulo {
   padding: var(--40px) 0 var(--40px) 0;
   text-align: center;
+}
+
+/* .figure-caption {
+  padding-left: var(--10px);
+} */
+
+.figure-caption .color-dot {
+  height: var(--10px);
+  width: var(--10px);
+  background-color: var(--verde-pacch);
+  border-radius: 30%;
+  display: inline-block;
+  margin-right: 5px;
 }
 
 /* Inician Media Queries */
@@ -981,7 +995,8 @@ h4.subtitulo-creditos {
   #quiz1,
   #quiz2,
   #quiz3,
-  #quiz4 {
+  #quiz4,
+  #quiz5 {
     padding: 1.875rem;
     margin-top: 0;
   }

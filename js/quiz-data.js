@@ -29,6 +29,23 @@ $("#quiz2").dlxQuiz({
   quizData: {
     questions: [
       {
+        q: "Factores como la justicia social, los recursos económicos y el entorno ambiental influyen en el estado de salud de las personas.",
+        a: "Verdadero",
+        options: ["Falso", "Verdadero"],
+      },
+      {
+        q: "La salud va más allá de la simple ausencia de enfermedad e incluye dimensiones sociales y mentales.",
+        a: "Verdadero",
+        options: ["Falso", "Verdadero"],
+      },
+    ],
+  },
+});
+
+$("#quiz3").dlxQuiz({
+  quizData: {
+    questions: [
+      {
         q: "Cambios hormonales, pubertad, nuevas emociones, desarrollo del cerebro, formación de identidad de género y regulación emocional influida por el contexto.",
         a: "Individual",
         options: ["Individual", "Interpersonal", "Comunitario"],
@@ -47,7 +64,7 @@ $("#quiz2").dlxQuiz({
   },
 });
 
-$("#quiz3").dlxQuiz({
+$("#quiz4").dlxQuiz({
   quizData: {
     questions: [
       {
@@ -74,7 +91,7 @@ $("#quiz3").dlxQuiz({
   },
 });
 
-$("#quiz4").dlxQuiz({
+$("#quiz5").dlxQuiz({
   quizData: {
     questions: [
       {
