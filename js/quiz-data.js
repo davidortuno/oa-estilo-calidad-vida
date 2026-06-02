@@ -46,3 +46,30 @@ $("#quiz2").dlxQuiz({
     ],
   },
 });
+
+$("#quiz3").dlxQuiz({
+  quizData: {
+    questions: [
+      {
+        q: "En la adolescencia existe un retraso en el tiempo del reloj circadiano que produce:",
+        a: "Retraso en la hora de conciliar el sueño y resistencia a la privación de sueño",
+        options: [
+          "Cambios de humor",
+          "Conductas antisociales",
+          "Retraso en la hora de conciliar el sueño y resistencia a la privación de sueño",
+          "Inflamación del hipotálamo",
+        ],
+      },
+      {
+        q: "¿Qué tienen en común las pantallas que afectan el sueño?",
+        a: "Luz azul que bloquea la melatonina que es la hormona que induce el sueño",
+        options: [
+          "Comerciales que alteran el estado de animo",
+          "Luz infrarroja que afecta la homeostasis del sueño",
+          "Contenido que genera estrés",
+          "Luz azul que bloquea la melatonina que es la hormona que induce el sueño",
+        ],
+      },
+    ],
+  },
+});
