@@ -563,10 +563,6 @@ hr.linea-footer {
   padding-left: 5rem;
 }
 
-.contenido-oa-pacch {
-  padding: var(--80px) 0 0 0;
-}
-
 .badges-oa-pacch-interior {
   padding-bottom: 20px;
   font-family: var(--fuente-cursiva);
@@ -615,7 +611,7 @@ hr.linea-footer {
   color: var(--azul-obscuro);
 }
 
-.intro-tema {
+.espacio-bloque {
   padding-top: var(--80px);
 }
 
@@ -959,7 +955,7 @@ h4.subtitulo-creditos {
     height: auto !important;
   }
 
-  .intro-tema {
+  .espacio-bloque {
     padding-top: var(--40px);
   }
 
