@@ -117,3 +117,50 @@ $("#quiz5").dlxQuiz({
     ],
   },
 });
+
+$("#quiz6").dlxQuiz({
+  quizData: {
+    questions: [
+      {
+        q: "¿Con qué frecuencia se recomienda interrumpir los períodos prolongados de comportamiento sedentario en adolescentes de 12 a 18 años?",
+        a: "Mínimo una vez cada hora",
+        options: [
+          "Cada 30 minutos",
+          "Mínimo una vez cada hora",
+          "Solo al inicio y al final de la jornada escolar",
+          "Una vez al día",
+        ],
+      },
+      {
+        q: "¿Cuál de las siguientes actividades se menciona como ejemplo de pausa de movimiento durante el tiempo sedentario?",
+        a: "Estiramientos o desplazarse a otro salón de clase",
+        options: [
+          "Jugar videojuegos",
+          "Leer sentado",
+          "Estiramientos o desplazarse a otro salón de clase",
+          "Hacer tareas en la computadora sin moverse",
+        ],
+      },
+      {
+        q: "Las tareas para hacer en casa deberían:",
+        a: "Incluir diferentes tipos de movimiento siempre que sea posible",
+        options: [
+          "Ser principalmente sedentarias",
+          "Realizarse únicamente frente a pantallas",
+          "Superar los 60 minutos diarios de actividad física",
+          "Incluir diferentes tipos de movimiento siempre que sea posible",
+        ],
+      },
+      {
+        q: "En cuanto al tiempo frente a pantallas con fines escolares, se recomienda:",
+        a: "Descansar de los dispositivos al menos cada 30 minutos",
+        options: [
+          "Usarlas sin límite mientras sean tareas escolares",
+          "Descansar de los dispositivos al menos cada 30 minutos",
+          "Hacer varias tareas simultáneamente en múltiples dispositivos",
+          "Usarlas justo antes de dormir para preparar tareas",
+        ],
+      },
+    ],
+  },
+});
