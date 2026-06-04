@@ -689,7 +689,8 @@ hr.linea-footer {
 #quiz3,
 #quiz4,
 #quiz5,
-#quiz6 {
+#quiz6,
+#quiz7 {
   max-width: 100%;
   width: 100%;
   background: #F1F1F1;
@@ -1010,7 +1011,8 @@ h4.subtitulo-creditos {
   #quiz3,
   #quiz4,
   #quiz5,
-  #quiz6 {
+  #quiz6,
+  #quiz7 {
     padding: 1.875rem;
     margin-top: 0;
   }

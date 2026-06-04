@@ -164,3 +164,30 @@ $("#quiz6").dlxQuiz({
     ],
   },
 });
+
+$("#quiz7").dlxQuiz({
+  quizData: {
+    questions: [
+      {
+        q: "Según el estudio, ¿cuánto aumentó el riesgo de cáncer de mama en mujeres que consumían una o más porciones diarias de refresco?",
+        a: "1.78 veces mayor",
+        options: [
+          "1.2 veces mayor",
+          "1.5 veces mayor",
+          "1.78 veces mayor",
+          "3 veces mayor",
+        ],
+      },
+      {
+        q: "¿Cuál es una de las razones biológicas por las que los refrescos podrían aumentar el riesgo de cáncer?",
+        a: "Favorecen el aumento de peso y la resistencia a la insulina",
+        options: [
+          "Aumentan la hidratación celular",
+          "Reducen la inflamación corporal",
+          "Favorecen el aumento de peso y la resistencia a la insulina",
+          "Disminuyen el metabolismo",
+        ],
+      },
+    ],
+  },
+});
