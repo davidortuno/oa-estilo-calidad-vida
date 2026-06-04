@@ -611,8 +611,12 @@ hr.linea-footer {
   color: var(--azul-obscuro);
 }
 
-.espacio-bloque {
+.espacio-bloque-80 {
   padding-top: var(--80px);
+}
+
+.espacio-bloque-40 {
+  padding-top: var(--40px);
 }
 
 /* Termina Introducción */
@@ -955,8 +959,12 @@ h4.subtitulo-creditos {
     height: auto !important;
   }
 
-  .espacio-bloque {
+  .espacio-bloque-80 {
     padding-top: var(--40px);
+  }
+
+  .espacio-bloque-40 {
+    padding-top: var(--20px);
   }
 
   #footer-oa-pacch {
