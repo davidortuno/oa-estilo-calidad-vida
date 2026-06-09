@@ -75,6 +75,7 @@
 .quiz .quizQuestions>li .questionTitle {
     margin: 0;
     padding: 40px 0;
+    text-transform: none;
 }
 
 .quizScoreRank {
