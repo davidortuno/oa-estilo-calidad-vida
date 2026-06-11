@@ -692,6 +692,7 @@ hr.linea-footer {
   text-align: center;
 }
 
+.contenedor-quiz,
 #quiz1,
 #quiz2,
 #quiz3,
@@ -1018,6 +1019,7 @@ h4.subtitulo-creditos {
     text-align: left;
   }
 
+  .contenedor-quiz,
   #quiz1,
   #quiz2,
   #quiz3,
