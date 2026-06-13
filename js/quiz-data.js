@@ -1,260 +1,539 @@
 const quizData = {
-  // 1. IMÁGENES (5 Escenarios)
-  quizImagenNivel1: {
-    label: "Selección de Imagen",
-    questions: [
-      {
-        // 1. Una sola correcta
-        text: "¿Cuál es un dispositivo móvil táctil? (1 Correcta)",
-        type: "image",
-        multiple: false,
-        correct: [1],
-        feedback: { correct: "Correcto.", incorrect: "Incorrecto." },
-        options: [
-          {
-            label: "Laptop",
-            image:
-              "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300&q=80",
-          },
-          {
-            label: "Tablet",
-            image:
-              "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=300&q=80",
-          },
-          {
-            label: "Monitor",
-            image:
-              "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=300&q=80",
-          },
-        ],
-      },
-      {
-        // 2. Todas correctas
-        text: "Selecciona todas las imágenes que representen tecnología (Todas Correctas)",
-        type: "image",
-        multiple: true,
-        correct: [0, 1, 2],
-        feedback: {
-          correct: "¡Exacto! Todas son correctas.",
-          incorrect: "Debías seleccionarlas todas.",
-        },
-        options: [
-          { label: "Laptop", icon: "💻" },
-          { label: "Smartwatch", icon: "⌚" },
-          { label: "Server", icon: "🗄️" },
-        ],
-      },
-      {
-        // 3. Ninguna correcta
-        text: "Selecciona el automóvil (Ninguna correcta - Presiona Comprobar sin seleccionar nada)",
-        type: "image",
-        multiple: true,
-        correct: [],
-        feedback: {
-          correct: "¡Bien hecho! Te diste cuenta que no había ningún auto.",
-          incorrect: "Te dejaste engañar, ninguno es un automóvil.",
-        },
-        options: [
-          { label: "Bote", icon: "⛵" },
-          { label: "Avión", icon: "✈️" },
-          { label: "Tren", icon: "🚂" },
-        ],
-      },
-      {
-        // 4. Múltiples correctas
-        text: "Selecciona los dispositivos con pantalla incorporada (2 Correctas)",
-        type: "image",
-        multiple: true,
-        correct: [0, 1],
-        feedback: {
-          correct: "Correcto. El teclado no tiene pantalla.",
-          incorrect: "Revisa bien cuáles tienen pantalla.",
-        },
-        options: [
-          { label: "Tablet", icon: "📱" },
-          { label: "Laptop", icon: "💻" },
-          { label: "Teclado", icon: "⌨️" },
-        ],
-      },
-      {
-        // 5. Solo retroalimentación neutral
-        text: "Selecciona tu icono favorito (Retroalimentación Neutral con HTML)",
-        type: "image",
-        multiple: true,
-        alwaysNeutral: true,
-        feedback: {
-          neutral:
-            "<div class='html-content-wrap'><p><strong>Opinión registrada.</strong></p><p>En el diseño de interfaces (UI), el uso correcto de iconos ayuda a:</p><ul><li>Reducir la carga cognitiva.</li><li>Ahorrar espacio en pantalla.</li><li>Superar barreras de idioma.</li></ul></div>",
-        },
-        options: [
-          { label: "Fuego", icon: "🔥" },
-          { label: "Estrella", icon: "⭐" },
-          { label: "Corazón", icon: "❤️" },
-        ],
-      },
-    ],
-  },
-
-  // 2. TEXTO (5 Escenarios)
-  quizTextoEvaluacion: {
+  quizTextoEvaluacion1: {
     label: "Opción Múltiple",
     questions: [
       {
-        text: "¿Cuál es el atajo para copiar? (1 Correcta)",
+        text: "¿Por qué es importante cuidar la salud durante la adolescencia?",
+        type: "text",
+        multiple: false,
+        correct: [1],
+        feedback: { correct: "", incorrect: "" },
+        options: [
+          { label: "Porque en esta etapa no ocurren muchos cambios." },
+          {
+            label:
+              "Porque en la adolescencia se forman hábitos que pueden influir en la vida futura.",
+          },
+          {
+            label:
+              "Porque los adolescentes ya tienen completamente definida su identidad.",
+          },
+          { label: "Porque es la etapa con menos riesgos para la salud" },
+        ],
+      },
+      {
+        text: "¿Cuáles son algunos de los problemas de salud más comunes que enfrentan los adolescentes según el texto?",
+        type: "text",
+        multiple: false,
+        correct: [2],
+        feedback: { correct: "", incorrect: "" },
+        options: [
+          { label: "Problemas relacionados con enfermedades respiratorias." },
+          { label: "Robo, violencia escolar y problemas económicos." },
+          {
+            label:
+              "Accidentes de tránsito, estrés, ansiedad, depresión y mala alimentación.",
+          },
+          { label: "Exclusivamente consumo de alcohol." },
+        ],
+      },
+    ],
+  },
+  quizTextoEvaluacion2: {
+    label: "Opción Múltiple",
+    questions: [
+      {
+        text: "Factores como la justicia social, los recursos económicos y el entorno ambiental influyen en el estado de salud de las personas.",
         type: "text",
         multiple: false,
         correct: [0],
-        feedback: { correct: "Correcto. Ctrl+C.", incorrect: "Es Ctrl+C." },
+        feedback: { correct: "", incorrect: "" },
         options: [
-          { label: "Ctrl+C" },
-          { label: "Ctrl+X" },
-          { label: "Ctrl+V" },
+          { label: "Verdadero" },
+          {
+            label: "Falso",
+          },
         ],
       },
       {
-        text: "¿Cuáles son lenguajes web? (Todas correctas)",
+        text: "La salud va más allá de la simple ausencia de enfermedad e incluye dimensiones sociales y mentales.",
         type: "text",
-        multiple: true,
-        correct: [0, 1, 2],
-        feedback: {
-          correct: "¡Excelente! Todos lo son.",
-          incorrect: "Debías seleccionar todas las opciones.",
-        },
-        options: [{ label: "HTML" }, { label: "CSS" }, { label: "JavaScript" }],
-      },
-      {
-        text: "Selecciona las bases de datos NoSQL (Ninguna correcta)",
-        type: "text",
-        multiple: true,
-        correct: [],
-        feedback: {
-          correct: "Bien hecho. Todas eran SQL.",
-          incorrect: "Error. Todas las listadas son relacionales.",
-        },
+        multiple: false,
+        correct: [0],
+        feedback: { correct: "", incorrect: "" },
         options: [
-          { label: "MySQL" },
-          { label: "PostgreSQL" },
-          { label: "Oracle" },
+          { label: "Verdadero" },
+          {
+            label: "Falso",
+          },
+        ],
+      },
+    ],
+  },
+  quizTextoEvaluacion3: {
+    label: "Opción Múltiple",
+    questions: [
+      {
+        text: "Mayor exposición a efectos de la globalización, acceso limitado a recursos, poca participación en decisiones políticas y vulnerabilidad ante pobreza, empleo precario o contextos frágiles.",
+        type: "text",
+        multiple: false,
+        correct: [0],
+        feedback: { correct: "", incorrect: "" },
+        options: [
+          { label: "Individual" },
+          {
+            label: "Interpersonal",
+          },
+          {
+            label: "Comunitario",
+          },
+          {
+            label: "Organizacional",
+          },
+          {
+            label: "Ambiental",
+          },
+          {
+            label: "Macroeconómico y factores estructurales",
+          },
         ],
       },
       {
-        text: "Selecciona colores primarios (2 Correctas)",
+        text: "Cambios hormonales, pubertad, nuevas emociones, desarrollo del cerebro, formación de identidad de género y regulación emocional influida por el contexto.",
         type: "text",
-        multiple: true,
-        correct: [0, 1],
-        feedback: {
-          correct: "Correcto.",
-          incorrect: "El verde es secundario en pintura pigmento.",
-        },
-        options: [{ label: "Rojo" }, { label: "Azul" }, { label: "Verde" }],
+        multiple: false,
+        correct: [0],
+        feedback: { correct: "", incorrect: "" },
+        options: [
+          { label: "Individual" },
+          {
+            label: "Interpersonal",
+          },
+          {
+            label: "Comunitario",
+          },
+          {
+            label: "Organizacional",
+          },
+          {
+            label: "Ambiental",
+          },
+          {
+            label: "Macroeconómico y factores estructurales",
+          },
+        ],
       },
       {
-        text: "¿Qué opinas del diseño accesible? (Neutral con HTML)",
+        text: "Interés por la equidad, influencia de valores comunitarios y normas relacionadas con género y edad.",
+        type: "text",
+        multiple: false,
+        correct: [0],
+        feedback: { correct: "", incorrect: "" },
+        options: [
+          { label: "Individual" },
+          {
+            label: "Interpersonal",
+          },
+          {
+            label: "Comunitario",
+          },
+          {
+            label: "Organizacional",
+          },
+          {
+            label: "Ambiental",
+          },
+          {
+            label: "Macroeconómico y factores estructurales",
+          },
+        ],
+      },
+      {
+        text: "Formación prolongada debido a mayor escolaridad, integración tardía al trabajo, y uso más independiente de servicios de salud, aunque con barreras.",
+        type: "text",
+        multiple: false,
+        correct: [0],
+        feedback: { correct: "", incorrect: "" },
+        options: [
+          { label: "Individual" },
+          {
+            label: "Interpersonal",
+          },
+          {
+            label: "Comunitario",
+          },
+          {
+            label: "Organizacional",
+          },
+          {
+            label: "Ambiental",
+          },
+          {
+            label: "Macroeconómico y factores estructurales",
+          },
+        ],
+      },
+      {
+        text: "Desarrollo de habilidades sociales, mayor presencia en espacios fuera de la familia, relaciones con pares y surgimiento de vínculos románticos.",
+        type: "text",
+        multiple: false,
+        correct: [0],
+        feedback: { correct: "", incorrect: "" },
+        options: [
+          { label: "Individual" },
+          {
+            label: "Interpersonal",
+          },
+          {
+            label: "Comunitario",
+          },
+          {
+            label: "Organizacional",
+          },
+          {
+            label: "Ambiental",
+          },
+          {
+            label: "Macroeconómico y factores estructurales",
+          },
+        ],
+      },
+      {
+        text: "Infraestructura relacionada con agua, saneamiento, transporte y calidad del aire; vulnerabilidad a riesgos ambientales como plomo, incendios o publicidad de productos no saludables.",
+        type: "text",
+        multiple: false,
+        correct: [0],
+        feedback: { correct: "", incorrect: "" },
+        options: [
+          { label: "Individual" },
+          {
+            label: "Interpersonal",
+          },
+          {
+            label: "Comunitario",
+          },
+          {
+            label: "Organizacional",
+          },
+          {
+            label: "Ambiental",
+          },
+          {
+            label: "Macroeconómico y factores estructurales",
+          },
+        ],
+      },
+    ],
+  },
+  quizTextoEvaluacion4: {
+    label: "Opción Múltiple",
+    questions: [
+      {
+        text: "En la adolescencia existe un retraso en el tiempo del reloj circadiano que produce:",
+        type: "text",
+        multiple: false,
+        correct: [2],
+        feedback: { correct: "", incorrect: "" },
+        options: [
+          { label: "Cambios de humor" },
+          {
+            label: "Conductas antisociales",
+          },
+          {
+            label:
+              "Retraso en la hora de conciliar el sueño y resistencia a la privación de sueño",
+          },
+          { label: "Inflamación del hipotálamo" },
+        ],
+      },
+      {
+        text: "¿Qué tienen en común las pantallas que afectan el sueño?",
+        type: "text",
+        multiple: false,
+        correct: [3],
+        feedback: { correct: "", incorrect: "" },
+        options: [
+          { label: "Comerciales que alteran el estado de animo" },
+          { label: "Luz infrarroja que afecta la homeostasis del sueño" },
+          {
+            label: "Contenido que genera estres",
+          },
+          {
+            label:
+              "Luz azul que bloquea la melatonina que es la hormona que induce el sueño",
+          },
+        ],
+      },
+    ],
+  },
+  quizTextoEvaluacion5: {
+    label: "Opción Múltiple",
+    questions: [
+      {
+        text: "El cuerpo se apaga durante el sueño",
+        type: "text",
+        multiple: false,
+        correct: [0],
+        feedback: {
+          correct:
+            "El sueño es un proceso activo. Algunos sistemas metabólicos se reducen, pero órganos y funciones hormonales continúan activamente.",
+          incorrect:
+            "El sueño es un proceso activo. Algunos sistemas metabólicos se reducen, pero órganos y funciones hormonales continúan activamente.",
+        },
+        options: [
+          { label: "Falso" },
+          {
+            label: "Verdadero",
+          },
+        ],
+      },
+      {
+        text: "Perder una hora de sueño no afecta el día siguiente",
+        type: "text",
+        multiple: false,
+        correct: [0],
+        feedback: {
+          correct:
+            "El sueño es un proceso activo. Algunos sistemas metabólicos se reducen, pero órganos y funciones hormonales continúan activamente.",
+          incorrect:
+            "El sueño es un proceso activo. Algunos sistemas metabólicos se reducen, pero órganos y funciones hormonales continúan activamente.",
+        },
+        options: [
+          { label: "Falso" },
+          {
+            label: "Verdadero",
+          },
+        ],
+      },
+      {
+        text: "Nos adaptamos rápido a horarios nuevos",
+        type: "text",
+        multiple: false,
+        correct: [0],
+        feedback: {
+          correct:
+            "El reloj biológico se reajusta lentamente (1–2 h/día), por lo que cambios bruscos (turnos nocturnos, viajes) causan desajustes.",
+          incorrect:
+            "El reloj biológico se reajusta lentamente (1–2 h/día), por lo que cambios bruscos (turnos nocturnos, viajes) causan desajustes.",
+        },
+        options: [
+          { label: "Falso" },
+          {
+            label: "Verdadero",
+          },
+        ],
+      },
+      {
+        text: "Selecciona cuántas horas de sueño son recomendadas en la adolescencia",
+        type: "text",
+        multiple: false,
+        correct: [2],
+        feedback: {
+          correct: "",
+          incorrect: "",
+        },
+        options: [
+          { label: "6-8" },
+          {
+            label: "7-9",
+          },
+          {
+            label: "8-10",
+          },
+          {
+            label: "9 o más",
+          },
+        ],
+      },
+    ],
+  },
+  quizTextoEvaluacion6: {
+    label: "Opción Múltiple",
+    questions: [
+      {
+        text: "¿Cuál de las siguientes opciones es en la que más realizas actividad física?",
         type: "text",
         multiple: true,
         alwaysNeutral: true,
         feedback: {
           neutral:
-            "<div class='html-content-wrap'><p>La accesibilidad digital es un derecho, no una característica extra.</p><p>Crear formularios interactivos y sistemas de votación inclusivos garantiza que todos los usuarios puedan participar equitativamente.</p></div>",
+            "<div class='html-content-wrap'><p>Independientemente de la opción que hayas marcado, lo más importante que debes saber es que todo movimiento suma para tu calidad de vida.  En esta etapa de tu vida, tu cuerpo y tu mente se están terminando de formar. Ya sea que hagas deporte por competencia, te desplaces en bicicleta como transporte, o ayudes con las tareas del hogar, estás enviando una señal de bienestar a tu cerebro.</p><ul><li>Si tu actividad es estructurada (Deporte o Ejercicio): Estás fortaleciendo tu disciplina y tu capacidad cardiovascular de forma directa.</li><li>Si tu actividad es cotidiana (Escolar, Laboral o Transporte): Estás integrando el movimiento de forma natural en tu día, lo cual es clave para combatir el sedentarismo sin darte cuenta.</li></ul><p>No importa el 'dónde' ni el 'cómo', sino la constancia. Al elegir moverte, estás reduciendo el estrés, mejorando tu concentración para el estudio y, sobre todo, tomando el control de tu salud futura. ¡Sigue encontrando espacios para mantenerte en acción!</p></div>",
         },
         options: [
-          { label: "Es vital" },
-          { label: "Es opcional" },
-          { label: "No lo sé" },
+          { label: "Deporte" },
+          {
+            label: "Recreativa",
+          },
+          {
+            label: "Laboral",
+          },
+          {
+            label: "Escolar",
+          },
+          {
+            label: "Ejercicio",
+          },
+          {
+            label: "Hogar",
+          },
+          {
+            label: "Transporte",
+          },
+        ],
+      },
+    ],
+  },
+  quizTextoEvaluacion7: {
+    label: "Opción Múltiple",
+    questions: [
+      {
+        text: "¿Con qué frecuencia se recomienda interrumpir los períodos prolongados de comportamiento sedentario en adolescentes de 12 a 18 años?",
+        type: "text",
+        multiple: false,
+        correct: [1],
+        feedback: {
+          correct: "",
+          incorrect: "",
+        },
+        options: [
+          { label: "Cada 30 minutos" },
+          {
+            label: "Mínimo una vez cada hora",
+          },
+          {
+            label: "Solo al inicio y al final de la jornada escolar",
+          },
+          {
+            label: "Una vez al día",
+          },
+        ],
+      },
+      {
+        text: "¿Cuál de las siguientes actividades se menciona como ejemplo de pausa de movimiento durante el tiempo sedentario?",
+        type: "text",
+        multiple: false,
+        correct: [2],
+        feedback: {
+          correct: "",
+          incorrect: "",
+        },
+        options: [
+          { label: "Jugar videojuegos" },
+          {
+            label: "Leer sentado",
+          },
+          {
+            label: "Estiramientos o desplazarse a otro salón de clase",
+          },
+          {
+            label: "Hacer tareas en la computadora sin moverse",
+          },
+        ],
+      },
+      {
+        text: "Las tareas para hacer en casa deberían:",
+        type: "text",
+        multiple: false,
+        correct: [3],
+        feedback: {
+          correct: "",
+          incorrect: "",
+        },
+        options: [
+          { label: "Ser principalmente sedentarias" },
+          {
+            label: "Realizarse únicamente frente a pantallas",
+          },
+          {
+            label: "Superar los 60 minutos diarios de actividad física",
+          },
+          {
+            label:
+              "Incluir diferentes tipos de movimiento siempre que sea posible",
+          },
+        ],
+      },
+      {
+        text: "En cuanto al tiempo frente a pantallas con fines escolares, se recomienda:",
+        type: "text",
+        multiple: false,
+        correct: [1],
+        feedback: {
+          correct: "",
+          incorrect: "",
+        },
+        options: [
+          { label: "Usarlas sin límite mientras sean tareas escolares" },
+          {
+            label: "Descansar de los dispositivos al menos cada 30 minutos",
+          },
+          {
+            label:
+              "Hacer varias tareas simultáneamente en múltiples dispositivos",
+          },
+          {
+            label: "Usarlas justo antes de dormir para preparar tareas",
+          },
+        ],
+      },
+    ],
+  },
+  quizTextoEvaluacion8: {
+    label: "Opción Múltiple",
+    questions: [
+      {
+        text: "¿Según el estudio, ¿cuánto aumentó el riesgo de cáncer de mama en mujeres que consumían una o más porciones diarias de refresco?",
+        type: "text",
+        multiple: false,
+        correct: [2],
+        feedback: {
+          correct: "",
+          incorrect: "",
+        },
+        options: [
+          { label: "1.2 veces mayor" },
+          {
+            label: "1.5 veces mayor",
+          },
+          {
+            label: "1.78 veces mayor",
+          },
+          {
+            label: "3 veces mayor",
+          },
+        ],
+      },
+      {
+        text: "¿Cuál es una de las razones biológicas por las que los refrescos podrían aumentar el riesgo de cáncer?",
+        type: "text",
+        multiple: false,
+        correct: [2],
+        feedback: {
+          correct: "",
+          incorrect: "",
+        },
+        options: [
+          { label: "Aumentan la hidratación celular" },
+          {
+            label: "Reducen la inflamación corporal",
+          },
+          {
+            label:
+              "Favorecen el aumento de peso y la resistencia a la insulina",
+          },
+          {
+            label: "Disminuyen el metabolismo",
+          },
         ],
       },
     ],
   },
 
-  // 3. DRAG & DROP (7 Escenarios: 5 Básicos + 2 Detallados)
-  quizDragAlimentos: {
+  // DRAG & DROP
+  quizDragAlimentos1: {
     label: "Arrastrar y Soltar",
     questions: [
       {
-        // 1. Una sola correcta
-        text: "Ordena el proceso UX (1 Orden Correcto):",
-        type: "drag",
-        mode: "order",
-        correctOrder: ["A", "B", "C"],
-        feedback: {
-          correct: "Orden perfecto.",
-          incorrect: "El orden es: Investigación > Wireframes > UI.",
-        },
-        options: [
-          { id: "A", label: "Investigación" },
-          { id: "B", label: "Wireframes" },
-          { id: "C", label: "Diseño UI" },
-        ],
-      },
-      {
-        // 2. Todas correctas (Cualquier orden)
-        text: "Arrastra estos elementos a la caja en el orden que prefieras (Cualquier orden es válido):",
-        type: "drag",
-        mode: "order",
-        acceptAnyOrder: true,
-        correctOrder: ["A", "B", "C"],
-        feedback: {
-          correct:
-            "¡Perfecto! Al ser subjetivo, cualquier orden cuenta como correcto.",
-          incorrect: "",
-        },
-        options: [
-          { id: "A", label: "Música" },
-          { id: "B", label: "Cine" },
-          { id: "C", label: "Pintura" },
-        ],
-      },
-      {
-        // 3. Ninguna correcta (Trampa)
-        text: "Arrastra las verduras a la caja de Carnes (Ninguna pertenece - Comprobar sin arrastrar nada):",
-        type: "drag",
-        mode: "grouping",
-        groups: [{ id: "carnes", label: "Carnes", correctItems: [] }],
-        feedback: {
-          correct: "¡Excelente! No caíste en la trampa.",
-          incorrect: "Te dejaste engañar, ninguno de esos elementos es carne.",
-        },
-        options: [
-          { id: "v1", label: "Zanahoria" },
-          { id: "v2", label: "Brócoli" },
-        ],
-      },
-      {
-        // 4. Múltiples correctas (Simple)
-        text: "Separa colores cálidos y fríos:",
-        type: "drag",
-        mode: "grouping",
-        groups: [
-          { id: "calido", label: "Cálidos", correctItems: ["rojo"] },
-          { id: "frio", label: "Fríos", correctItems: ["azul"] },
-        ],
-        feedback: {
-          correct: "Excelente clasificación.",
-          incorrect: "Revisa tu clasificación.",
-        },
-        options: [
-          { id: "rojo", label: "Rojo" },
-          { id: "azul", label: "Azul" },
-        ],
-      },
-      {
-        // 5. Retroalimentación Neutral
-        text: "Coloca tu alimento preferido en la caja (Neutral):",
-        type: "drag",
-        mode: "grouping",
-        alwaysNeutral: true,
-        groups: [{ id: "fav", label: "Mi Favorito", correctItems: [] }],
-        feedback: {
-          neutral:
-            "Independientemente de tus preferencias, recuerda mantener una dieta equilibrada.",
-        },
-        options: [
-          { id: "a1", label: "Pizza" },
-          { id: "a2", label: "Ensalada" },
-        ],
-      },
-      {
-        // 6. EJERCICIO DETALLADO 1 (2 cajas, puras palabras)
         text: "Clasifica los alimentos según su impacto ambiental:",
         type: "drag",
         mode: "grouping",
@@ -297,9 +576,14 @@ const quizData = {
           { id: "leguminosas", label: "Leguminosas" },
         ],
       },
+    ],
+  },
+
+  quizDragAlimentos2: {
+    label: "Arrastrar y Soltar",
+    questions: [
       {
-        // 7. EJERCICIO DETALLADO 2 (3 cajas, puras imágenes)
-        text: "Clasifica los alimentos por su nivel de procesamiento (Sistema NOVA):",
+        text: "Clasifica los alimentos por su nivel de procesamiento:",
         type: "drag",
         mode: "grouping",
         imageOnly: true,
@@ -393,173 +677,6 @@ const quizData = {
               "https://images.unsplash.com/photo-1551024601-bec78aea704b?w=150&q=80",
           },
         ],
-      },
-    ],
-  },
-
-  // 4. HOTSPOT (5 Escenarios)
-  quizHotspotCelula: {
-    label: "Áreas Interactivas",
-    questions: [
-      {
-        text: "Haz clic en el cuadrante inferior derecho (1 Correcta):",
-        type: "hotspot",
-        multiple: false,
-        regions: [
-          {
-            id: "a",
-            label: "Izq",
-            x: "5%",
-            y: "10%",
-            w: "40%",
-            h: "80%",
-            correct: false,
-          },
-          {
-            id: "b",
-            label: "Der",
-            x: "55%",
-            y: "10%",
-            w: "40%",
-            h: "80%",
-            correct: true,
-          },
-        ],
-        feedback: { correct: "Correcto.", incorrect: "Incorrecto." },
-      },
-      {
-        text: "Selecciona todos los organelos visibles (Todas correctas):",
-        type: "hotspot",
-        multiple: true,
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Plant_cell_structure-es.svg/1024px-Plant_cell_structure-es.svg.png",
-        regions: [
-          {
-            id: "r1",
-            label: "Núcleo",
-            x: "42%",
-            y: "45%",
-            w: "15%",
-            h: "15%",
-            correct: true,
-          },
-          {
-            id: "r2",
-            label: "Pared",
-            x: "85%",
-            y: "20%",
-            w: "12%",
-            h: "10%",
-            correct: true,
-          },
-        ],
-        feedback: {
-          correct: "¡Exacto! Seleccionaste todos.",
-          incorrect: "Faltaron organelos por seleccionar.",
-        },
-      },
-      {
-        text: "Selecciona el motor de combustión en esta célula (Ninguna correcta - Comprobar en vacío):",
-        type: "hotspot",
-        multiple: true,
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Plant_cell_structure-es.svg/1024px-Plant_cell_structure-es.svg.png",
-        regions: [
-          {
-            id: "r1",
-            label: "Núcleo",
-            x: "42%",
-            y: "45%",
-            w: "15%",
-            h: "15%",
-            correct: false,
-          },
-          {
-            id: "r2",
-            label: "Pared",
-            x: "85%",
-            y: "20%",
-            w: "12%",
-            h: "10%",
-            correct: false,
-          },
-        ],
-        feedback: {
-          correct: "¡Muy inteligente! Las células no tienen motores.",
-          incorrect: "Elegiste un área, pero no hay motores aquí.",
-        },
-      },
-      {
-        text: "Selecciona Pared y Membrana (2 Correctas):",
-        type: "hotspot",
-        multiple: true,
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Plant_cell_structure-es.svg/1024px-Plant_cell_structure-es.svg.png",
-        regions: [
-          {
-            id: "r1",
-            label: "Núcleo",
-            x: "42%",
-            y: "45%",
-            w: "15%",
-            h: "15%",
-            correct: false,
-          },
-          {
-            id: "r2",
-            label: "Pared",
-            x: "85%",
-            y: "20%",
-            w: "12%",
-            h: "10%",
-            correct: true,
-          },
-          {
-            id: "r3",
-            label: "Membrana",
-            x: "70%",
-            y: "85%",
-            w: "12%",
-            h: "10%",
-            correct: true,
-          },
-        ],
-        feedback: {
-          correct: "¡Excelente!",
-          incorrect: "Revisa las barreras externas.",
-        },
-      },
-      {
-        text: "Explora la célula seleccionando áreas (Neutral):",
-        type: "hotspot",
-        multiple: true,
-        alwaysNeutral: true,
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Plant_cell_structure-es.svg/1024px-Plant_cell_structure-es.svg.png",
-        regions: [
-          {
-            id: "r1",
-            label: "Área 1",
-            x: "42%",
-            y: "45%",
-            w: "15%",
-            h: "15%",
-            correct: false,
-          },
-          {
-            id: "r2",
-            label: "Área 2",
-            x: "85%",
-            y: "20%",
-            w: "12%",
-            h: "10%",
-            correct: false,
-          },
-        ],
-        feedback: {
-          neutral:
-            "<div class='html-content-wrap'><p><strong>Célula Vegetal</strong></p><p>A diferencia de la animal, posee una pared celular rígida y cloroplastos.</p></div>",
-        },
       },
     ],
   },
