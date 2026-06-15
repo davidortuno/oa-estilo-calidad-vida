@@ -613,68 +613,57 @@ const quizData = {
           {
             id: "leche",
             label: "Leche",
-            image:
-              "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=150&q=80",
+            image: "img/alimentos-leche.webp",
           },
           {
             id: "avena",
             label: "Avena",
-            image:
-              "https://images.unsplash.com/photo-1517673132405-a56a62b18caf?w=150&q=80",
+            image: "img/alimentos-avena.webp",
           },
           {
             id: "arroz",
             label: "Arroz",
-            image:
-              "https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?w=150&q=80",
+            image: "img/alimentos-arroz.webp",
           },
           {
             id: "jicama",
             label: "Jícama",
-            image:
-              "https://images.unsplash.com/photo-1596472288151-50e8a71b12b5?w=150&q=80",
+            image: "img/alimentos-jicama.webp",
           },
           {
             id: "nopal",
             label: "Nopal",
-            image:
-              "https://images.unsplash.com/photo-1599305090598-fe179d501227?w=150&q=80",
+            image: "img/alimentos-nopal.webp",
           },
           {
             id: "v_lata",
             label: "Verduras enlatadas",
-            image:
-              "https://images.unsplash.com/photo-1598216117326-85750c184d08?w=150&q=80",
+            image: "img/alimentos-verduras-lata.webp",
           },
           {
             id: "pan_art",
             label: "Pan Artesanal",
-            image:
-              "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=150&q=80",
+            image: "img/alimentos-pan-artesanal.webp",
           },
           {
             id: "soda",
             label: "Soda",
-            image:
-              "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=150&q=80",
+            image: "img/alimentos-soda.webp",
           },
           {
             id: "papas",
             label: "Papas fritas envasadas",
-            image:
-              "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=150&q=80",
+            image: "img/alimentos-papas-fritas.webp",
           },
           {
             id: "salchicha",
             label: "Salchicha",
-            image:
-              "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=150&q=80",
+            image: "img/alimentos-salchicha.webp",
           },
           {
             id: "donas",
             label: "Donas",
-            image:
-              "https://images.unsplash.com/photo-1551024601-bec78aea704b?w=150&q=80",
+            image: "img/alimentos-dona.webp",
           },
         ],
       },
