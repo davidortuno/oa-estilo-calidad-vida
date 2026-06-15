@@ -1,5 +1,6 @@
 :root {
   /* Colores */
+  --gris-claro: #DDDDDD;
   --gris-texto: #202128;
   --blanco-texto: #F1F1F1;
   --verde-obscuro: #55591D;
@@ -146,7 +147,7 @@ header {
 .btn-verde-claro {
   color: var(--verde-obscuro);
   background-color: var(--verde-claro);
-  border-color: var(--verde-claro);
+  border: 1px solid var(--verde-obscuro);
   text-transform: uppercase;
 }
 
@@ -176,7 +177,7 @@ header {
 .btn-verde-obscuro:hover {
   color: var(--verde-obscuro);
   background-color: var(--verde-claro);
-  border-color: var(--verde-claro);
+  border: 1px solid var(--verde-obscuro);
 }
 
 .btn.btn-verde-obscuro.show,
@@ -203,6 +204,11 @@ header {
   border-color: transparent;
 }
 
+.dropdown-item:focus,
+.dropdown-item:hover {
+  background-color: var(--gris-claro);
+}
+
 
 .logo-header-pacch img {
   height: 2.25rem;
@@ -219,7 +225,7 @@ header {
 }
 
 .navbar-oa-pacch {
-  background-color: var(--blanco-texto);
+  background-color: var(--gris-claro);
   padding: 0.875rem 1.25rem;
   border-radius: 1.25rem;
 }
@@ -873,6 +879,14 @@ h4.subtitulo-creditos {
     padding: 0;
   }
 
+  .botones-header div {
+    padding-right: 0.875rem;
+  }
+
+  .navbar-oa-pacch {
+    padding: 0.875rem;
+  }
+
   /* .btn {
     font-size: 0.938rem;
   } */
@@ -1040,6 +1054,10 @@ h4.subtitulo-creditos {
 }
 
 @media (max-width: 576px) {
+
+  .dropdown-item {
+    white-space: normal;
+  }
 
   #footer-oa-pacch .navbar-nav {
     flex-direction: column;
