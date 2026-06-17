@@ -74,31 +74,6 @@ const quizData = {
     label: "Opción Múltiple",
     questions: [
       {
-        text: "Mayor exposición a efectos de la globalización, acceso limitado a recursos, poca participación en decisiones políticas y vulnerabilidad ante pobreza, empleo precario o contextos frágiles.",
-        type: "text",
-        multiple: false,
-        correct: [0],
-        feedback: { correct: "", incorrect: "" },
-        options: [
-          { label: "Individual" },
-          {
-            label: "Interpersonal",
-          },
-          {
-            label: "Comunitario",
-          },
-          {
-            label: "Organizacional",
-          },
-          {
-            label: "Ambiental",
-          },
-          {
-            label: "Macroeconómico y factores estructurales",
-          },
-        ],
-      },
-      {
         text: "Cambios hormonales, pubertad, nuevas emociones, desarrollo del cerebro, formación de identidad de género y regulación emocional influida por el contexto.",
         type: "text",
         multiple: false,
@@ -112,22 +87,13 @@ const quizData = {
           {
             label: "Comunitario",
           },
-          {
-            label: "Organizacional",
-          },
-          {
-            label: "Ambiental",
-          },
-          {
-            label: "Macroeconómico y factores estructurales",
-          },
         ],
       },
       {
         text: "Interés por la equidad, influencia de valores comunitarios y normas relacionadas con género y edad.",
         type: "text",
         multiple: false,
-        correct: [0],
+        correct: [2],
         feedback: { correct: "", incorrect: "" },
         options: [
           { label: "Individual" },
@@ -136,40 +102,6 @@ const quizData = {
           },
           {
             label: "Comunitario",
-          },
-          {
-            label: "Organizacional",
-          },
-          {
-            label: "Ambiental",
-          },
-          {
-            label: "Macroeconómico y factores estructurales",
-          },
-        ],
-      },
-      {
-        text: "Formación prolongada debido a mayor escolaridad, integración tardía al trabajo, y uso más independiente de servicios de salud, aunque con barreras.",
-        type: "text",
-        multiple: false,
-        correct: [0],
-        feedback: { correct: "", incorrect: "" },
-        options: [
-          { label: "Individual" },
-          {
-            label: "Interpersonal",
-          },
-          {
-            label: "Comunitario",
-          },
-          {
-            label: "Organizacional",
-          },
-          {
-            label: "Ambiental",
-          },
-          {
-            label: "Macroeconómico y factores estructurales",
           },
         ],
       },
@@ -177,7 +109,7 @@ const quizData = {
         text: "Desarrollo de habilidades sociales, mayor presencia en espacios fuera de la familia, relaciones con pares y surgimiento de vínculos románticos.",
         type: "text",
         multiple: false,
-        correct: [0],
+        correct: [1],
         feedback: { correct: "", incorrect: "" },
         options: [
           { label: "Individual" },
@@ -186,40 +118,6 @@ const quizData = {
           },
           {
             label: "Comunitario",
-          },
-          {
-            label: "Organizacional",
-          },
-          {
-            label: "Ambiental",
-          },
-          {
-            label: "Macroeconómico y factores estructurales",
-          },
-        ],
-      },
-      {
-        text: "Infraestructura relacionada con agua, saneamiento, transporte y calidad del aire; vulnerabilidad a riesgos ambientales como plomo, incendios o publicidad de productos no saludables.",
-        type: "text",
-        multiple: false,
-        correct: [0],
-        feedback: { correct: "", incorrect: "" },
-        options: [
-          { label: "Individual" },
-          {
-            label: "Interpersonal",
-          },
-          {
-            label: "Comunitario",
-          },
-          {
-            label: "Organizacional",
-          },
-          {
-            label: "Ambiental",
-          },
-          {
-            label: "Macroeconómico y factores estructurales",
           },
         ],
       },
