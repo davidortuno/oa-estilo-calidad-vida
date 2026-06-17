@@ -14,8 +14,8 @@
   --neutral: #d97706;
   --neutral-border: rgba(217, 119, 6, 0.3);
   --neutral-light: #fffbeb;
-  --action: #6366f1;
-  --action-hover: #4f46e5;
+  --action: #ffca2c;
+  --action-hover: #ffc107;
   --border: #e2e8f0;
   --shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.1);
@@ -465,7 +465,7 @@
 
 .quiz-btn-action {
   background: var(--action);
-  color: #ffffff;
+  color: #202128;
   /* box-shadow: 0 2px 8px rgba(99, 102, 241, 0.25); */
 }
 
