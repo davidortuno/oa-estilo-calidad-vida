@@ -395,7 +395,7 @@ text {
   fill: var(--verde-obscuro);
 }
 
-.circle-btn:hover text {
+.circle-btn text {
   animation: rotateText 6s linear infinite;
 }
 
