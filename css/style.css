@@ -225,7 +225,7 @@ header {
 }
 
 .navbar-oa-pacch {
-  background-color: var(--gris-claro);
+  background-color: var(--blanco-texto);
   padding: 0.875rem 1.25rem;
   border-radius: 1.25rem;
 }
@@ -794,7 +794,7 @@ h4.subtitulo-creditos {
   height: 22px;
   display: flex;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
   margin-left: var(--20px);
 }
 

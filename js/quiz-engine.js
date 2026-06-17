@@ -72,7 +72,9 @@ class QuizInstance {
                             <div class="step-info"><strong class="step-current">1</strong> / <strong class="step-total">${this.quizData.questions.length}</strong></div>
                             <button class="quiz-btn quiz-btn-primary btn-next" disabled>
                                 <span class="btn-next-label">${LANG.next}</span>
+                                <span class="icono-btn">
                                 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                                </span>
                             </button>
                         </div>
                     </div>
