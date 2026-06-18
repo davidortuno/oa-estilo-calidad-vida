@@ -182,8 +182,24 @@ header {
 
 .btn.btn-verde-obscuro.show,
 .btn.btn-verde-obscuro:first-child:active {
-  color: var(--blanco-texto);
+  /* color: var(--blanco-texto);
+  background-color: var(--verde-obscuro); */
+  background-color: var(--verde-claro);
+  border-color: var(--verde-obscuro);
+}
+
+.btn.btn-verde-obscuro.show .icono-btn,
+.btn.btn-verde-obscuro:first-child:active .icono-btn {
   background-color: var(--verde-obscuro);
+}
+
+.btn.btn-verde-obscuro.show .icono-btn i,
+.btn.btn-verde-obscuro:first-child:active .icono-btn i {
+  color: var(--blanco-texto);
+}
+
+.btn.btn-verde-obscuro:focus-visible {
+  background-color: var(--verde-claro);
   border-color: var(--verde-obscuro);
 }
 
@@ -202,11 +218,110 @@ header {
 
 .dropdown-menu.show {
   border-color: transparent;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
 .dropdown-item:focus,
 .dropdown-item:hover {
   background-color: var(--gris-claro);
+}
+
+.icono-btn {
+  background-color: var(--blanco-texto);
+  border-radius: 100%;
+  width: 22px;
+  height: 22px;
+  display: inline-grid;
+  align-items: center;
+  justify-content: center;
+  margin-left: var(--20px);
+}
+
+.icono-btn i {
+  font-size: 14px;
+  color: var(--verde-obscuro)
+}
+
+/* Target the default pseudo-element chevron */
+.dropdown-toggle::after {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Rotate 180 degrees when the dropdown is active */
+.dropdown-toggle[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
+/* Remove default caret arrow if using custom icon */
+.animated-toggle::after {
+  display: none !important;
+}
+
+/* Establish smooth rotation tracking on the custom icon */
+.animated-toggle .toggle-icon {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Trigger a smooth flip rotation when expanded */
+.animated-toggle[aria-expanded="true"] .toggle-icon {
+  transform: rotate(-180deg);
+}
+
+.animated-toggle .toggle-icon::before,
+.animated-toggle .toggle-icon[class*=" bi-"]::before,
+.boton-inicio-mobile .bi-arrow-right::before,
+.boton-inicio-mobile .bi-arrow-right[class*=" bi-"]::before {
+  font-weight: var(--grosor-negrita) !important;
+}
+
+@media (min-width: 768px) {
+  .animate {
+    animation-duration: 0.3s;
+    -webkit-animation-duration: 0.3s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    -webkit-transform: transform;
+    -webkit-opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -webkit-opacity: 1;
+  }
+
+  0% {
+    -webkit-transform: translateY(1rem);
+    -webkit-opacity: 0;
+  }
+}
+
+.slideIn {
+  -webkit-animation-name: slideIn;
+  animation-name: slideIn;
 }
 
 
@@ -700,14 +815,7 @@ hr.linea-footer {
   text-align: center;
 }
 
-.contenedor-quiz,
-#quiz1,
-#quiz2,
-#quiz3,
-#quiz4,
-#quiz5,
-#quiz6,
-#quiz7 {
+.contenedor-quiz {
   max-width: 100%;
   width: 100%;
   background: #F1F1F1;
@@ -785,22 +893,6 @@ h4.subtitulo-creditos {
 
 .cita-apa p {
   overflow-wrap: break-word;
-}
-
-.icono-btn {
-  background-color: var(--blanco-texto);
-  border-radius: 100%;
-  width: 22px;
-  height: 22px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: var(--20px);
-}
-
-.icono-btn i {
-  font-size: 14px;
-  color: var(--verde-obscuro)
 }
 
 .btn-verde-obscuro:hover .icono-btn {
@@ -997,7 +1089,6 @@ h4.subtitulo-creditos {
     margin-top: var(--40px);
   }
 
-
   .paginacion-inferior {
     margin-top: var(--40px);
   }
@@ -1035,14 +1126,7 @@ h4.subtitulo-creditos {
     text-align: left;
   }
 
-  .contenedor-quiz,
-  #quiz1,
-  #quiz2,
-  #quiz3,
-  #quiz4,
-  #quiz5,
-  #quiz6,
-  #quiz7 {
+  .contenedor-quiz {
     padding: 1.875rem;
     margin-top: 0;
   }
@@ -1051,13 +1135,21 @@ h4.subtitulo-creditos {
     padding: var(--20px) 0 var(--20px) 0;
     text-align: center;
   }
+
+  .btn-chico {
+    padding: 5px 15px;
+  }
+
+  .icono-btn {
+    margin-left: var(--10px);
+  }
 }
 
 @media (max-width: 576px) {
 
-  .dropdown-item {
+  /* .dropdown-item {
     white-space: normal;
-  }
+  } */
 
   #footer-oa-pacch .navbar-nav {
     flex-direction: column;
