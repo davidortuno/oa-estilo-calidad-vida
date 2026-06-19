@@ -50,12 +50,6 @@
   }
 }
 
-/* [data-theme="light"] {
-}
-
-[data-theme="dark"] {
-} */
-
 body {
   font-family: var(--fuente-principal);
   font-weight: var(--grosor-normal);
@@ -126,17 +120,13 @@ header {
   padding-right: 1.25rem;
 }
 
-/* .botones-header ul li {
-  padding-right: 1.25rem;
-} */
-
 .btn-chico {
-  padding: 5px 1.25rem;
+  padding: var(--5px) var(--10px);
   border-radius: 99999px;
 }
 
 .btn-grande {
-  padding: 10px 1.25rem;
+  padding: var(--10px) var(--10px);
   border-radius: 99999px;
 }
 
@@ -182,8 +172,6 @@ header {
 
 .btn.btn-verde-obscuro.show,
 .btn.btn-verde-obscuro:first-child:active {
-  /* color: var(--blanco-texto);
-  background-color: var(--verde-obscuro); */
   background-color: var(--verde-claro);
   border-color: var(--verde-obscuro);
 }
@@ -205,16 +193,9 @@ header {
 
 .dropdown-item.active,
 .dropdown-item:active {
-  color: var(--blanco-texto);
-  text-decoration: none;
+  color: var(--texto-gris);
   background-color: var(--verde-obscuro);
 }
-
-/* .dropdown-item:focus,
-.dropdown-item:hover {
-  color: var(--verde-obscuro);
-  background-color: var(--verde-claro);
-} */
 
 .dropdown-menu.show {
   border-color: transparent;
@@ -242,29 +223,24 @@ header {
   color: var(--verde-obscuro)
 }
 
-/* Target the default pseudo-element chevron */
 .dropdown-toggle::after {
   display: inline-block;
   transition: transform 0.3s ease-in-out;
 }
 
-/* Rotate 180 degrees when the dropdown is active */
 .dropdown-toggle[aria-expanded="true"]::after {
   transform: rotate(180deg);
 }
 
-/* Remove default caret arrow if using custom icon */
 .animated-toggle::after {
   display: none !important;
 }
 
-/* Establish smooth rotation tracking on the custom icon */
 .animated-toggle .toggle-icon {
   display: inline-block;
   transition: transform 0.3s ease-in-out;
 }
 
-/* Trigger a smooth flip rotation when expanded */
 .animated-toggle[aria-expanded="true"] .toggle-icon {
   transform: rotate(-180deg);
 }
@@ -370,7 +346,6 @@ header {
 .redes-header ul li {
   display: inline-block;
   vertical-align: middle;
-  /* font-size: 1.25rem; */
   margin: 0 0.313rem;
 }
 
@@ -865,6 +840,11 @@ h4.subtitulo-creditos {
   padding-bottom: var(--80px);
 }
 
+ul.lista-bibliografia li::marker {
+  color: var(--verde-pacch);
+}
+
+
 .bloque-creditos-50,
 .bloque-creditos-100 {
   background-color: var(--blanco-texto);
@@ -907,10 +887,6 @@ h4.subtitulo-creditos {
   padding: var(--40px) 0 var(--40px) 0;
   text-align: center;
 }
-
-/* .figure-caption {
-  padding-left: var(--10px);
-} */
 
 .figure-caption .color-dot {
   height: var(--10px);
@@ -979,10 +955,6 @@ h4.subtitulo-creditos {
     padding: 0.875rem;
   }
 
-  /* .btn {
-    font-size: 0.938rem;
-  } */
-
   .hero-portada {
     padding-top: var(--40px);
     padding-bottom: var(--40px);
@@ -998,14 +970,6 @@ h4.subtitulo-creditos {
   .badges-oa-pacch .badge:first-child {
     margin-bottom: var(--10px);
   }
-
-  /* .botones-header ul li {
-    padding: 1.25rem 0 0 0;
-  }
-
-  .botones-header ul li a {
-    width: 100%;
-  } */
 
   h1 {
     font-size: 3rem;
@@ -1137,7 +1101,7 @@ h4.subtitulo-creditos {
   }
 
   .btn-chico {
-    padding: 5px 15px;
+    padding: var(--5px) var(--10px);
   }
 
   .icono-btn {
@@ -1146,10 +1110,6 @@ h4.subtitulo-creditos {
 }
 
 @media (max-width: 576px) {
-
-  /* .dropdown-item {
-    white-space: normal;
-  } */
 
   #footer-oa-pacch .navbar-nav {
     flex-direction: column;
