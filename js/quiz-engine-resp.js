@@ -151,11 +151,8 @@ class QuizInstance {
     this.els.feedbackBar.className = "feedback-bar";
     this.els.feedbackBar.style.display = "none";
 
-    // Restaurar la visualización del botón por si fue ocultado en la pregunta anterior
-    this.els.btnNext.style.display = "inline-flex";
-
     if (this.isChecking && q.type !== "drag") {
-      this.els.btnNext.disabled = true; // Empieza deshabilitado para forzar la selección (incluso en neutral)
+      this.els.btnNext.disabled = false;
       this.els.btnNextLabel.textContent = LANG.check;
     } else {
       this.els.btnNext.disabled = true;
@@ -221,8 +218,6 @@ class QuizInstance {
         this.selectedAnswers.push(idx);
         card.classList.add("selected");
       }
-      // Habilitar botón de comprobar solo si hay algo seleccionado
-      this.els.btnNext.disabled = this.selectedAnswers.length === 0;
     } else {
       this.answered = true;
       const correctArr = q.correct || [];
@@ -303,17 +298,11 @@ class QuizInstance {
       .sort(() => Math.random() - 0.5)
       .forEach((opt) => src.appendChild(this.createDragItem(opt, q.imageOnly)));
 
+    // Aquí usamos la nueva clase índigo (quiz-btn-action) que solicitaste
     const btn = document.createElement("button");
     btn.className = "quiz-btn quiz-btn-action";
     btn.style.marginTop = "16px";
-
-    // Inyectando el SVG para el botón Comprobar Clasificación
-    btn.innerHTML = `<span>${LANG.dragBtn}</span><span class="icono-btn" style="margin-left:8px; display:inline-flex; align-items:center;">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-  <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
-</svg>
-    </span>`;
-
+    btn.textContent = LANG.dragBtn;
     btn.onclick = () =>
       q.mode === "grouping"
         ? this.checkGroupAnswer(q, wrap, src)
@@ -516,9 +505,7 @@ class QuizInstance {
 
   clickHotspot(e, reg, hs, q) {
     if (this.answered) return;
-
-    // Eliminada la condición !q.alwaysNeutral para permitir la selección obligatoria en neutrales
-    if (this.isChecking) {
+    if (this.isChecking && !q.alwaysNeutral) {
       const id = reg.dataset.id;
       if (this.selectedAnswers.includes(id)) {
         this.selectedAnswers = this.selectedAnswers.filter((v) => v !== id);
@@ -535,8 +522,6 @@ class QuizInstance {
         marker.style.top = ((e.clientY - rect.top) / rect.height) * 100 + "%";
         hs.appendChild(marker);
       }
-      // Habilitar botón de comprobar solo si hay algo seleccionado
-      this.els.btnNext.disabled = this.selectedAnswers.length === 0;
     } else {
       this.answered = true;
       let isCorrect = true;
@@ -618,11 +603,6 @@ class QuizInstance {
       this.els.feedbackBar.innerHTML = msgHTML.includes("<")
         ? msgHTML
         : `<strong>${LANG.feedbackN}</strong> ${msgHTML}`;
-
-      // Ocultar botón 'Ver Resultados' si es un ejercicio neutral en la última pregunta
-      if (this.currentQIndex === this.quizData.questions.length - 1) {
-        this.els.btnNext.style.display = "none";
-      }
     } else {
       this.els.feedbackBar.className =
         "feedback-bar " + (isCorrect ? "correct" : "incorrect");
