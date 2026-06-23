@@ -278,6 +278,70 @@
                 <div class="row">
                     <div class="col-lg-8 mx-auto text-center">
                         <h3>Ejercicio</h3>
+                        <!-- <p class="m-0"> Ingresa al <a
+                                href="https://www.oecd.org/en/data/tools/well-being-data-monitor/better-life-index.html"
+                                target="_blank">tablero dinámico
+                                <i class="bi bi-arrow-up-right-circle-fill"></i></a> del Índice para una
+                            Vida Mejor de la OCDE y revisa
+                            el lugar que ocupa México con respecto a los demás países miembro de la OCDE por indicador
+                            de calidad de vida.
+                        </p> -->
+                        <p class="m-0">Explora la comparativa de los países con puntajes más altos y más bajos, y ubica
+                            la posición de México en cada rubro.</p>
+                    </div>
+                </div>
+
+                <div class="row espacio-bloque-40">
+                    <div class="col-md-4 col-sm-12 mx-auto">
+                        <label for="indicadorSelect" class="form-label indicadorSelect">Selecciona un
+                            indicador a explorar:</label>
+                        <select id="indicadorSelect" class="form-select">
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center espacio-bloque-40">
+                    <div class="col-md-12">
+                        <div id="alerta-mexico" class="alert d-none" role="alert">
+                            <strong>Nota importante:</strong> En la
+                            última
+                            evaluación de la OCDE, no se registraron datos para México en el indicador de
+                            "Conocimientos
+                            y habilidades".
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="chart-wrapper contenedor-quiz" id="chart-ocde">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <div class="col-lg-12 mx-auto nota-fuente">
+                        <p class="m-0">
+                            <strong>Aclaración:</strong> Los resultados refieren solo a los países miembro de la
+                            OCDE,
+                            no son tendencias mundiales. Posiblemente hay países que ofrecen mejores o peores
+                            condiciones de calidad de vida, pero no participaron en esta evaluación. Los resultados
+                            son
+                            dinámicos. De todos estos indicadores: salud, conocimientos y habilidades, calidad
+                            ambiental, bienestar subjetivo y seguridad son los que en su conjunto se ocupan para
+                            estimar
+                            la calidad de vida de las personas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section class="espacio-bloque-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h3>Ejercicio</h3>
                         <p class="m-0"> Ingresa al <a
                                 href="https://www.oecd.org/en/data/tools/well-being-data-monitor/better-life-index.html"
                                 target="_blank">tablero dinámico
@@ -292,10 +356,58 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
+
+                        <div class="mb-4 text-center">
+                            <div class="col-12">
+                                <h2 class="mb-3" style="color: var(--verde-obscuro); font-weight: bold;">Indicadores
+                                    de Calidad de Vida (OCDE)</h2>
+                                <p class="lead">Comparativa de los 5 países con puntajes más altos y más bajos,
+                                    destacando la posición de México.</p>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center mb-4">
+                            <div class="col-md-6 col-sm-10">
+                                <label for="indicadorSelect" class="form-label fw-bold">Selecciona un indicador a
+                                    explorar:</label>
+                                <select id="indicadorSelect"
+                                    class="form-select form-select-lg border-success shadow-sm">
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center">
+                            <div class="col-md-8 text-center">
+                                <div id="alerta-mexico" class="alert alert-warning d-none" role="alert">
+                                    <strong>Nota:</strong> En la última evaluación de la OCDE, no se registraron
+                                    datos para México en el indicador de "Conocimientos y habilidades".
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="chart-container" id="chart">
+                                    <div class="d3-tooltip" id="tooltip"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-5">
+                            <div class="col-md-10 offset-md-1 nota-fuente">
+                                <strong>Nota importante:</strong> Los resultados refieren solo de los países miembro
+                                de la OCDE, no son tendencias mundiales. Posiblemente hay países que ofrecen mejores
+                                o peores condiciones, pero no participaron en esta evaluación. Los resultados son
+                                dinámicos y pueden cambiar en emisiones futuras. De todos estos indicadores: salud,
+                                conocimientos y habilidades, calidad ambiental, bienestar subjetivo y seguridad son
+                                los que en su conjunto se ocupan para estimar la calidad de vida de las personas.
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
-        </section>
+        </section> -->
 
     </main>
 
@@ -369,6 +481,174 @@
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
         integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
         async></script>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const datosOCDE = {
+                'Vivienda': [
+                    { pais: 'Corea', valor: 9, tipo: 'Alto' }, { pais: 'Portugal', valor: 8, tipo: 'Alto' }, { pais: 'Holanda', valor: 8, tipo: 'Alto' }, { pais: 'Costa Rica', valor: 8, tipo: 'Alto' }, { pais: 'Estados Unidos', valor: 8, tipo: 'Alto' },
+                    { pais: 'Israel', valor: 4, tipo: 'Bajo' }, { pais: 'México', valor: 4, tipo: 'Bajo' }, { pais: 'Grecia', valor: 4, tipo: 'Bajo' }, { pais: 'Polonia', valor: 3, tipo: 'Bajo' }, { pais: 'Eslovaquia', valor: 1, tipo: 'Bajo' }
+                ],
+                'Ingresos': [
+                    { pais: 'Luxemburgo', valor: 9, tipo: 'Alto' }, { pais: 'Islandia', valor: 8, tipo: 'Alto' }, { pais: 'Bélgica', valor: 6, tipo: 'Alto' }, { pais: 'Suiza', valor: 6, tipo: 'Alto' }, { pais: 'Australia', valor: 6, tipo: 'Alto' },
+                    { pais: 'Turquía', valor: 3, tipo: 'Bajo' }, { pais: 'México', valor: 3, tipo: 'Bajo' }, { pais: 'Chile', valor: 2, tipo: 'Bajo' }, { pais: 'Costa Rica', valor: 2, tipo: 'Bajo' }, { pais: 'Colombia', valor: 1, tipo: 'Bajo' }
+                ],
+                'Calidad del trabajo y el empleo': [
+                    { pais: 'Luxemburgo', valor: 9, tipo: 'Alto' }, { pais: 'Holanda', valor: 8, tipo: 'Alto' }, { pais: 'Lituania', valor: 8, tipo: 'Alto' }, { pais: 'Dinamarca', valor: 8, tipo: 'Alto' }, { pais: 'Noruega', valor: 8, tipo: 'Alto' },
+                    { pais: 'Israel', valor: 4, tipo: 'Bajo' }, { pais: 'Costa Rica', valor: 4, tipo: 'Bajo' }, { pais: 'Corea', valor: 3, tipo: 'Bajo' }, { pais: 'México', valor: 3, tipo: 'Bajo' }, { pais: 'Turquía', valor: 2, tipo: 'Bajo' }
+                ],
+                'Conexiones sociales': [
+                    { pais: 'Islandia', valor: 8, tipo: 'Alto' }, { pais: 'Holanda', valor: 8, tipo: 'Alto' }, { pais: 'Nueva Zelanda', valor: 7, tipo: 'Alto' }, { pais: 'Finlandia', valor: 6, tipo: 'Alto' }, { pais: 'Noruega', valor: 6, tipo: 'Alto' }, { pais: 'México', valor: 6, tipo: 'Medio' },
+                    { pais: 'Australia', valor: 4, tipo: 'Bajo' }, { pais: 'Grecia', valor: 4, tipo: 'Bajo' }, { pais: 'Luxemburgo', valor: 3, tipo: 'Bajo' }, { pais: 'Corea', valor: 2, tipo: 'Bajo' }, { pais: 'Japón', valor: 1, tipo: 'Bajo' }
+                ],
+                'Conocimientos y habilidades': [
+                    { pais: 'Japón', valor: 10, tipo: 'Alto' }, { pais: 'Corea', valor: 9, tipo: 'Alto' }, { pais: 'Estonia', valor: 9, tipo: 'Alto' }, { pais: 'Canadá', valor: 9, tipo: 'Alto' }, { pais: 'Irlanda', valor: 8, tipo: 'Alto' },
+                    { pais: 'Eslovaquia', valor: 5, tipo: 'Bajo' }, { pais: 'Israel', valor: 5, tipo: 'Bajo' }, { pais: 'Islandia', valor: 5, tipo: 'Bajo' }, { pais: 'Grecia', valor: 4, tipo: 'Bajo' }, { pais: 'Chile', valor: 3, tipo: 'Bajo' }
+                ],
+                'Calidad ambiental': [
+                    { pais: 'Finlandia', valor: 10, tipo: 'Alto' }, { pais: 'Islandia', valor: 8, tipo: 'Alto' }, { pais: 'Noruega', valor: 8, tipo: 'Alto' }, { pais: 'Suecia', valor: 8, tipo: 'Alto' }, { pais: 'Canadá', valor: 7, tipo: 'Alto' },
+                    { pais: 'Colombia', valor: 4, tipo: 'Bajo' }, { pais: 'Estados Unidos', valor: 3, tipo: 'Bajo' }, { pais: 'Turquía', valor: 2, tipo: 'Bajo' }, { pais: 'México', valor: 1, tipo: 'Bajo' }, { pais: 'España', valor: 1, tipo: 'Bajo' }
+                ],
+                'Participación cívica': [
+                    { pais: 'Australia', valor: 9, tipo: 'Alto' }, { pais: 'Turquía', valor: 8, tipo: 'Alto' }, { pais: 'Dinamarca', valor: 7, tipo: 'Alto' }, { pais: 'Nueva Zelanda', valor: 7, tipo: 'Alto' }, { pais: 'Holanda', valor: 7, tipo: 'Alto' }, { pais: 'México', valor: 6, tipo: 'Medio' },
+                    { pais: 'Grecia', valor: 3, tipo: 'Bajo' }, { pais: 'Reino Unido', valor: 3, tipo: 'Bajo' }, { pais: 'Estonia', valor: 3, tipo: 'Bajo' }, { pais: 'Chile', valor: 2, tipo: 'Bajo' }, { pais: 'Latvia', valor: 1, tipo: 'Bajo' }
+                ],
+                'Salud': [
+                    { pais: 'Israel', valor: 10, tipo: 'Alto' }, { pais: 'Suiza', valor: 9, tipo: 'Alto' }, { pais: 'Italia', valor: 9, tipo: 'Alto' }, { pais: 'España', valor: 9, tipo: 'Alto' }, { pais: 'Luxemburgo', valor: 9, tipo: 'Alto' },
+                    { pais: 'Estonia', valor: 3, tipo: 'Bajo' }, { pais: 'Estados Unidos', valor: 3, tipo: 'Bajo' }, { pais: 'México', valor: 3, tipo: 'Bajo' }, { pais: 'Lituania', valor: 2, tipo: 'Bajo' }, { pais: 'Latvia', valor: 1, tipo: 'Bajo' }
+                ],
+                'Percepción de bienestar': [
+                    { pais: 'México', valor: 9, tipo: 'Alto' }, { pais: 'Costa Rica', valor: 8, tipo: 'Alto' }, { pais: 'Suiza', valor: 7, tipo: 'Alto' }, { pais: 'Islandia', valor: 7, tipo: 'Alto' }, { pais: 'Austria', valor: 7, tipo: 'Alto' },
+                    { pais: 'Portugal', valor: 5, tipo: 'Bajo' }, { pais: 'Japón', valor: 4, tipo: 'Bajo' }, { pais: 'Corea', valor: 4, tipo: 'Bajo' }, { pais: 'Grecia', valor: 4, tipo: 'Bajo' }, { pais: 'Israel', valor: 4, tipo: 'Bajo' }
+                ],
+                'Seguridad': [
+                    { pais: 'Luxemburgo', valor: 10, tipo: 'Alto' }, { pais: 'Alemania', valor: 10, tipo: 'Alto' }, { pais: 'Reino Unido', valor: 9, tipo: 'Alto' }, { pais: 'Suiza', valor: 8, tipo: 'Alto' }, { pais: 'Francia', valor: 8, tipo: 'Alto' },
+                    { pais: 'Australia', valor: 5, tipo: 'Bajo' }, { pais: 'Nueva Zelanda', valor: 5, tipo: 'Bajo' }, { pais: 'Costa Rica', valor: 5, tipo: 'Bajo' }, { pais: 'Colombia', valor: 4, tipo: 'Bajo' }, { pais: 'México', valor: 3, tipo: 'Bajo' }
+                ],
+                'Equilibrio entre trabajo y vida': [
+                    { pais: 'Noruega', valor: 10, tipo: 'Alto' }, { pais: 'Dinamarca', valor: 10, tipo: 'Alto' }, { pais: 'Islandia', valor: 9, tipo: 'Alto' }, { pais: 'Francia', valor: 8, tipo: 'Alto' }, { pais: 'Holanda', valor: 8, tipo: 'Alto' },
+                    { pais: 'México', valor: 4, tipo: 'Bajo' }, { pais: 'Portugal', valor: 3, tipo: 'Bajo' }, { pais: 'Lituania', valor: 3, tipo: 'Bajo' }, { pais: 'Litvia', valor: 3, tipo: 'Bajo' }, { pais: 'Eslovaquia', valor: 3, tipo: 'Bajo' }
+                ]
+            };
+
+            const select = document.getElementById('indicadorSelect');
+            const alertaMexico = document.getElementById('alerta-mexico');
+
+            Object.keys(datosOCDE).forEach(key => {
+                const option = document.createElement('option');
+                option.value = key;
+                option.textContent = key;
+                select.appendChild(option);
+            });
+
+            const margin = { top: 20, right: 30, bottom: 40, left: 140 };
+            const width = 900 - margin.left - margin.right;
+            const height = 500 - margin.top - margin.bottom;
+
+            const svg = d3.select("#chart-ocde")
+                .append("svg")
+                .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+                .attr("preserveAspectRatio", "xMidYMid meet")
+                .append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+
+            const x = d3.scaleLinear().domain([0, 10]).range([0, width]);
+            const y = d3.scaleBand().range([0, height]).padding(0.25);
+
+            const xAxis = svg.append("g")
+                .attr("class", "x-axis")
+                .attr("transform", `translate(0,${height})`);
+
+            const yAxis = svg.append("g")
+                .attr("class", "y-axis");
+
+            xAxis.transition().duration(500).call(d3.axisBottom(x).ticks(10));
+
+            // Corrección crítica: Inyectar el tooltip directamente en el <body>
+            const tooltip = d3.select("body").append("div")
+                .attr("class", "d3-tooltip");
+
+            // Estilos computados para leer las variables CSS
+            const getVar = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+
+            function updateChart(indicador) {
+                if (indicador === 'Conocimientos y habilidades') {
+                    alertaMexico.classList.remove('d-none');
+                } else {
+                    alertaMexico.classList.add('d-none');
+                }
+
+                let data = datosOCDE[indicador].sort((a, b) => b.valor - a.valor);
+
+                y.domain(data.map(d => d.pais));
+                yAxis.transition().duration(500).call(d3.axisLeft(y));
+
+                const bars = svg.selectAll("rect").data(data, d => d.pais);
+
+                bars.exit()
+                    .transition().duration(500)
+                    .attr("width", 0)
+                    .remove();
+
+                bars.enter()
+                    .append("rect")
+                    .attr("y", d => y(d.pais))
+                    .attr("height", y.bandwidth())
+                    .attr("x", 0)
+                    .attr("width", 0)
+                    .attr("rx", 4)
+                    .on("mouseover", function (event, d) {
+                        d3.select(this).style("opacity", 0.85);
+                        tooltip.style("opacity", 1)
+                            .html(`<strong>${d.pais}</strong><br>Puntaje: ${d.valor}/10`);
+                    })
+                    .on("mousemove", function (event) {
+                        tooltip.style("left", (event.pageX + 15) + "px")
+                            .style("top", (event.pageY - 30) + "px");
+                    })
+                    .on("mouseout", function (event, d) {
+                        d3.select(this).style("opacity", 1);
+                        // Ocultamos el tooltip y reseteamos sus coordenadas fuera de la pantalla
+                        // Esto evita el error de altura fantasma al redimensionar la ventana
+                        tooltip.style("opacity", 0)
+                            .style("left", "-1000px")
+                            .style("top", "-1000px");
+                    })
+                    // .on("mouseover", function (event, d) {
+                    //     d3.select(this).style("opacity", 0.85);
+                    //     tooltip.style("opacity", 1)
+                    //         .html(`<strong>${d.pais}</strong><br>Puntaje: ${d.valor}/10`);
+                    // })
+                    // .on("mousemove", function (event) {
+                    //     tooltip.style("left", (event.pageX + 15) + "px")
+                    //         .style("top", (event.pageY - 30) + "px");
+                    // })
+                    // .on("mouseout", function (event, d) {
+                    //     d3.select(this).style("opacity", 1);
+                    //     tooltip.style("opacity", 0);
+                    // })
+                    .merge(bars)
+                    .transition().duration(800)
+                    .attr("y", d => y(d.pais))
+                    .attr("height", y.bandwidth())
+                    .attr("width", d => x(d.valor))
+                    .attr("fill", d => {
+                        // Integración total con la paleta de colores del sitio
+                        if (d.pais === 'México') return getVar('--verde-pacch');
+                        if (d.tipo === 'Alto') return getVar('--verde-obscuro');
+                        return getVar('--verde-claro');
+                    });
+            }
+
+            select.addEventListener('change', function () {
+                updateChart(this.value);
+            });
+
+            updateChart('Vivienda');
+        });
+    </script>
 
 </body>
 
