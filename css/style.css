@@ -834,10 +834,8 @@ hr.linea-footer {
   font-family: var(--fuente-principal);
   font-size: 1rem;
   font-weight: var(--grosor-normal);
-
   background-color: var(--color-tooltip-bg, var(--gris-texto));
   color: var(--color-tooltip-texto, var(--blanco-texto));
-
   border-radius: var(--5px);
   pointer-events: none;
   opacity: 0;
