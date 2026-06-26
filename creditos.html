@@ -127,17 +127,24 @@
                     </div>
                 </div>
                 <div class="col-lg-12">
+
                     <div class="bloque-creditos-100 como-citar">
                         <h4>Cómo citar este material</h4>
                         <small>Formato APA 7ª edición</small>
+
                         <div class="cita-apa">
-                            <p class="font-monospace">Argumedo García, G. (2026). Estilo de vida saludable y calidad de
-                                vida. Portal Académico
-                                del CCH. https://portalacademico.cch.unam.mx/objetos/estilo-calidad-vida</p>
+                            <p id="copyText" class="font-monospace">Argumedo García, G. (2026). Estilo de
+                                vida saludable y calidad de vida. Portal Académico del CCH.
+                                https://portalacademico.cch.unam.mx/objetos/estilo-calidad-vida</p>
                         </div>
-                        <a class="btn btn-verde-obscuro btn-chico d-inline-flex align-items-center">Copiar cita <span
-                                class="icono-btn"><i class="bi bi-clipboard-fill"></i></span></a>
+
+                        <button class="btn btn-verde-obscuro btn-chico d-inline-flex align-items-center copyBtn"
+                            type="button">
+                            <span class="texto-btn">Copiar cita</span>
+                            <span class="icono-btn"><i class="bi bi-clipboard2-fill"></i></span>
+                        </button>
                     </div>
+
                 </div>
                 <div class="col-lg-12">
                     <div class="bloque-creditos-100 mb-0">
@@ -215,6 +222,43 @@
     </footer>
 
     <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const txt = document.getElementById("copyText");
+        const btn = document.querySelector(".copyBtn");
+        const btnText = btn.querySelector(".texto-btn");
+        const btnIconWrapper = btn.querySelector(".icono-btn");
+        const originalText = btnText.textContent;
+        const originalIconHTML = btnIconWrapper.innerHTML;
+        const successIconHTML = '<i class="bi bi-clipboard2-check-fill"></i>';
+        const errorIconHTML = '<i class="bi bi-clipboard2-x-fill"></i>';
+
+        btn.addEventListener("click", async () => {
+            const textToCopy = txt.textContent.replace(/\s+/g, ' ').trim();
+
+            try {
+                await navigator.clipboard.writeText(textToCopy);
+                const selection = window.getSelection();
+                const range = document.createRange();
+                range.selectNodeContents(txt);
+                selection.removeAllRanges();
+                selection.addRange(range);
+                btnText.textContent = "Copiado ";
+                btnIconWrapper.innerHTML = successIconHTML;
+
+            } catch (err) {
+                btnText.textContent = "Falla al copiar ";
+                btnIconWrapper.innerHTML = errorIconHTML;
+                console.error("Error al acceder al portapapeles: ", err);
+            }
+
+            setTimeout(() => {
+                btnText.textContent = originalText;
+                btnIconWrapper.innerHTML = originalIconHTML;
+                window.getSelection().removeAllRanges();
+            }, 1500);
+        });
+    </script>
 
 </body>
 
