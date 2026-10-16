@@ -426,6 +426,352 @@ const quizData = {
       },
     ],
   },
+  quizTextoEvaluacion9: {
+    label: "Opción Múltiple",
+    questions: [
+      {
+        text: "En el CCH se organizan actividades durante los recesos, se aprovechan diferentes espacios del plantel para realizar actividad física y se promueve la participación de los estudiantes en actividades físicas dentro y fuera del horario de clases ¿Qué inversión representa?",
+        type: "text",
+        multiple: false,
+        correct: [2],
+        feedback: {
+          correct:
+            "Enfoque escolar integral: Integra la actividad física en diferentes aspectos de la vida escolar, no solo en la clase de Educación Física.",
+          incorrect:
+            "Enfoque escolar integral: Integra la actividad física en diferentes aspectos de la vida escolar, no solo en la clase de Educación Física.",
+        },
+        options: [
+          { label: "Transporte activo" },
+          {
+            label: "Deporte y recreación para todos",
+          },
+          {
+            label: "Enfoque escolar integral",
+          },
+          {
+            label: "Programas abiertos a la comunidad",
+          },
+        ],
+      },
+      {
+        text: "El gobierno mejora las banquetas, instala ciclovías y hace más seguros los cruces cercanos al plantel para facilitar que los estudiantes caminen o utilicen la bicicleta ¿Qué inversión representa?",
+        type: "text",
+        multiple: false,
+        correct: [0],
+        feedback: {
+          correct:
+            "Diseño urbano activo: Diseña ciudades y espacios públicos que faciliten caminar, andar en bicicleta y realizar actividad física.",
+          incorrect:
+            "Diseño urbano activo: Diseña ciudades y espacios públicos que faciliten caminar, andar en bicicleta y realizar actividad física.",
+        },
+        options: [
+          { label: "Diseño urbano activo" },
+          {
+            label: "Transporte activo",
+          },
+          {
+            label: "Programas abiertos a la comunidad",
+          },
+          {
+            label: "Lugar de trabajo",
+          },
+        ],
+      },
+      {
+        text: "Una estudiante que vive relativamente cerca del plantel decide caminar parte del trayecto para llegar a clases. Otro compañero utiliza la bicicleta para trasladarse ¿Qué inversión representa? ",
+        type: "text",
+        multiple: false,
+        correct: [1],
+        feedback: {
+          correct:
+            "Transporte activo: Promueve caminar, usar la bicicleta o utilizar el transporte público como parte de los desplazamientos cotidianos.",
+          incorrect:
+            "Transporte activo: Promueve caminar, usar la bicicleta o utilizar el transporte público como parte de los desplazamientos cotidianos.",
+        },
+        options: [
+          { label: "Deporte y recreación para todos" },
+          {
+            label: "Transporte activo",
+          },
+          {
+            label: "Diseño urbano activo",
+          },
+          {
+            label: "Enfoque escolar integral",
+          },
+        ],
+      },
+      {
+        text: "En las redes sociales del plantel se difunden videos y mensajes sobre los beneficios de realizar actividad física y se invita a los estudiantes a incorporar más movimiento durante el día ¿Qué inversión representa?",
+        type: "text",
+        multiple: false,
+        correct: [2],
+        feedback: {
+          correct:
+            "Educación cívica y medios de comunicación: Utiliza campañas y medios para informar, motivar y aumentar la participación en actividad física.",
+          incorrect:
+            "Educación cívica y medios de comunicación: Utiliza campañas y medios para informar, motivar y aumentar la participación en actividad física.",
+        },
+        options: [
+          { label: "Profesionales de la salud" },
+          {
+            label: "Programas abiertos a la comunidad",
+          },
+          {
+            label: "Educación cívica y medios de comunicación",
+          },
+          {
+            label: "Enfoque escolar integral",
+          },
+        ],
+      },
+      {
+        text: "Un profesional de la salud orienta a estudiantes sobre la importancia de realizar actividad física y les proporciona información sobre dónde pueden participar en actividades deportivas o recreativas ¿Qué inversión representa?",
+        type: "text",
+        multiple: false,
+        correct: [0],
+        feedback: {
+          correct:
+            "Profesionales de la salud: Incorporan la promoción de la actividad física en la atención y orientación que brindan.",
+          incorrect:
+            "Profesionales de la salud: Incorporan la promoción de la actividad física en la atención y orientación que brindan.",
+        },
+        options: [
+          { label: "Profesionales de la salud" },
+          {
+            label: "Deporte y recreación para todos",
+          },
+          {
+            label: "Educación cívica y medios de comunicación",
+          },
+          {
+            label: "Programas abiertos a la comunidad",
+          },
+        ],
+      },
+      {
+        text: "El plantel o la comunidad ofrece diferentes opciones deportivas y recreativas, como fútbol, básquetbol, voleibol o atletismo, procurando que estudiantes con diferentes intereses y habilidades puedan participar ¿Qué inversión representa?",
+        type: "text",
+        multiple: false,
+        correct: [1],
+        feedback: {
+          correct:
+            "Deporte y recreación para todos: Promueve oportunidades accesibles para que todas las personas puedan participar en actividades deportivas y recreativas.",
+          incorrect:
+            "Deporte y recreación para todos: Promueve oportunidades accesibles para que todas las personas puedan participar en actividades deportivas y recreativas.",
+        },
+        options: [
+          { label: "Enfoque escolar integral" },
+          {
+            label: "Deporte y recreación para todos",
+          },
+          {
+            label: "Programas abiertos a la comunidad",
+          },
+          {
+            label: "Lugar de trabajo",
+          },
+        ],
+      },
+      {
+        text: "En una comunidad cercana al CCH se organizan caminatas, juegos y actividades deportivas en espacios públicos, abiertas a estudiantes, familias y otros integrantes de la comunidad ¿Qué inversión representa?",
+        type: "text",
+        multiple: false,
+        correct: [0],
+        feedback: {
+          correct:
+            " Programas abiertos a la comunidad: Ofrecen actividades y oportunidades para mantenerse activo que están disponibles para la comunidad.",
+          incorrect:
+            " Programas abiertos a la comunidad: Ofrecen actividades y oportunidades para mantenerse activo que están disponibles para la comunidad.",
+        },
+        options: [
+          { label: "Programas abiertos a la comunidad" },
+          {
+            label: "Transporte activo",
+          },
+          {
+            label: "Diseño urbano activo",
+          },
+          {
+            label: "Deporte y recreación para todos",
+          },
+        ],
+      },
+      {
+        text: "Una estudiante tiene un trabajo de medio tiempo donde puede guardar su bicicleta, participar en actividades físicas durante la jornada y realizar reuniones o desplazamientos que impliquen caminar ¿Qué inversión representa?",
+        type: "text",
+        multiple: false,
+        correct: [2],
+        feedback: {
+          correct:
+            "Lugar de trabajo: Busca que los espacios laborales faciliten y promuevan la actividad física durante la jornada.",
+          incorrect:
+            "Lugar de trabajo: Busca que los espacios laborales faciliten y promuevan la actividad física durante la jornada.",
+        },
+        options: [
+          { label: "Transporte activo" },
+          {
+            label: "Enfoque escolar integral",
+          },
+          {
+            label: "Lugar de trabajo",
+          },
+          {
+            label: "Programas abiertos a la comunidad",
+          },
+        ],
+      },
+    ],
+  },
+  quizTextoEvaluacion10: {
+    label: "Opción Múltiple",
+    questions: [
+      {
+        text: "Consumir productos locales y, cuando sea posible, comprarlos directamente a los productores contribuye a una alimentación más sostenible.",
+        type: "text",
+        multiple: false,
+        correct: [1],
+        feedback: {
+          correct:
+            "Consumir localmente y comprar directamente a productores favorece la sostenibilidad.",
+          incorrect:
+            "Consumir localmente y comprar directamente a productores favorece la sostenibilidad.",
+        },
+        options: [
+          { label: "Falso" },
+          {
+            label: "Verdadero",
+          },
+        ],
+      },
+      {
+        text: "Sustituir el consumo de carne por leguminosas es una estrategia recomendada.",
+        type: "text",
+        multiple: false,
+        correct: [1],
+        feedback: {
+          correct:
+            "Es ideal disminuir el consumo de carne y sustituirla al menos una vez por semana por leguminosas.",
+          incorrect:
+            "Es ideal disminuir el consumo de carne y sustituirla al menos una vez por semana por leguminosas.",
+        },
+        options: [
+          { label: "Falso" },
+          {
+            label: "Verdadero",
+          },
+        ],
+      },
+      {
+        text: "Los alimentos ultraprocesados y las bebidas industrializadas, como refrescos, jugos y bebidas energéticas, deben evitarse.",
+        type: "text",
+        multiple: false,
+        correct: [1],
+        feedback: {
+          correct:
+            "Se recomienda evitar alimentos ultraprocesados y bebidas industrializadas, incluidos jugos, refrescos y bebidas energéticas.",
+          incorrect:
+            "Se recomienda evitar alimentos ultraprocesados y bebidas industrializadas, incluidos jugos, refrescos y bebidas energéticas.",
+        },
+        options: [
+          { label: "Falso" },
+          {
+            label: "Verdadero",
+          },
+        ],
+      },
+      {
+        text: "Es preferible consumir alimentos frescos y agua potable no embotellada, después de filtrarla.",
+        type: "text",
+        multiple: false,
+        correct: [1],
+        feedback: {
+          correct:
+            "Se recomienda preferir alimentos frescos y agua potable no embotellada, después de filtrarla.",
+          incorrect:
+            "Se recomienda preferir alimentos frescos y agua potable no embotellada, después de filtrarla.",
+        },
+        options: [
+          { label: "Falso" },
+          {
+            label: "Verdadero",
+          },
+        ],
+      },
+      {
+        text: "Calcular nuestra huella ecológica puede ayudarnos a identificar acciones cotidianas para contribuir a la conservación de los recursos del planeta.",
+        type: "text",
+        multiple: false,
+        correct: [1],
+        feedback: {
+          correct:
+            "Conocer nuestra huella ecológica ayuda a identificar cambios que podemos realizar en nuestra vida cotidiana.",
+          incorrect:
+            "Conocer nuestra huella ecológica ayuda a identificar cambios que podemos realizar en nuestra vida cotidiana.",
+        },
+        options: [
+          { label: "Falso" },
+          {
+            label: "Verdadero",
+          },
+        ],
+      },
+      {
+        text: "Nuestras decisiones relacionadas con la alimentación pueden contribuir a conservar los recursos naturales que necesitaremos en el futuro.",
+        type: "text",
+        multiple: false,
+        correct: [1],
+        feedback: {
+          correct:
+            "Nuestras acciones cotidianas pueden contribuir a conservar los recursos del planeta para el futuro.",
+          incorrect:
+            "Nuestras acciones cotidianas pueden contribuir a conservar los recursos del planeta para el futuro.",
+        },
+        options: [
+          { label: "Falso" },
+          {
+            label: "Verdadero",
+          },
+        ],
+      },
+      {
+        text: "Para tener una alimentación sostenible, lo mejor es comprar siempre alimentos importados, ya que suelen tener mayor calidad.",
+        type: "text",
+        multiple: false,
+        correct: [0],
+        feedback: {
+          correct:
+            "El texto recomienda consumir productos locales, no priorizar alimentos importados.",
+          incorrect:
+            "El texto recomienda consumir productos locales, no priorizar alimentos importados.",
+        },
+        options: [
+          { label: "Falso" },
+          {
+            label: "Verdadero",
+          },
+        ],
+      },
+      {
+        text: "Las bebidas energéticas son una buena alternativa para sustituir el agua potable y mantenerse hidratado durante el día.",
+        type: "text",
+        multiple: false,
+        correct: [0],
+        feedback: {
+          correct:
+            "El texto recomienda preferir agua potable y evitar bebidas industrializadas, incluidas las bebidas energéticas.",
+          incorrect:
+            "El texto recomienda preferir agua potable y evitar bebidas industrializadas, incluidas las bebidas energéticas.",
+        },
+        options: [
+          { label: "Falso" },
+          {
+            label: "Verdadero",
+          },
+        ],
+      },
+    ],
+  },
 
   // DRAG & DROP
   quizDragAlimentos1: {

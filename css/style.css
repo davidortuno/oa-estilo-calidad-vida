@@ -1111,6 +1111,13 @@ ul.lista-bibliografia li::marker {
 
 /* Glosario */
 
+/* Otros */
+.numeralia h3, .numeralia p {
+  text-align: center;
+}
+
+/* Otros */
+
 /* Inician Media Queries */
 
 @media (max-width: 1200px) {
@@ -1342,6 +1349,10 @@ ul.lista-bibliografia li::marker {
 
   .icono-btn {
     margin-left: var(--10px);
+  }
+
+  .numeralia {
+    flex-direction: column;
   }
 }
 
