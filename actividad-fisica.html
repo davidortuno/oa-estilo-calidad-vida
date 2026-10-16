@@ -646,7 +646,30 @@
             </div>
         </section>
 
-        <section class="espacio-bloque-40">
+        <section class="espacio-bloque-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 ejercicio-actividad">
+                        <h3>Actividad</h3>
+                        <p class="m-0">Realiza la siguiente lectura <a href="docs/actividad-física-medio-ambiente.pdf"
+                                target="_blank">Actividad física y medio ambiente
+                                <i class="bi bi-arrow-up-right-circle-fill"></i></a> y organiza los medios de transporte
+                            según su nivel
+                            de sustentabilidad.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="quiz-container contenedor-quiz" data-quiz-id="quizTransporteKanbanNativo"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section class="espacio-bloque-40">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 ejercicio-actividad">
@@ -664,7 +687,8 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
+
 
         <!-- <section class="espacio-bloque-80">
             <div class="container">
@@ -765,6 +789,302 @@
     <script src="js/quiz-engine.js"></script>
     <script src="js/quiz-data.js"></script>
     <script src="js/functions.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.querySelector('.quiz-container[data-quiz-id="quizTransporteKanbanNativo"]');
+            if (!container) return;
+
+            // Datos oficiales de la infografía (Figura 1) ordenados de menos a más contaminante[cite: 3]
+            const correctOrderData = [
+                {
+                    id: "caminar",
+                    label: "Caminar",
+                    icon: `<svg viewBox="0 0 24 24"><path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.2L8 8.3V13h2V9.6l1.8-.7"/></svg>`
+                },
+                {
+                    id: "bicicleta",
+                    label: "Bicicleta",
+                    icon: `<svg viewBox="0 0 24 24"><path d="M15.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM5 12c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm14-8c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm-7-9h3v2h-3v2.8l2.9 2.9-1.4 1.4L11 14.2V11H8V9h4z"/></svg>`
+                },
+                {
+                    id: "bici_electrica",
+                    label: "Bicicleta eléctrica",
+                    icon: `<svg viewBox="0 0 24 24"><path d="M15.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM5 12c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm14-8c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm-6-8h3v2h-1.5l-1.5 3h2v2h-3v-2.8l2.9-2.9-1.4-1.4L10 11H8V9h5z"/></svg>`
+                },
+                {
+                    id: "tesla_renovable",
+                    label: "Modelo S Tesla (Energía renovable)",
+                    icon: `<svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.04 3H5.81l1.04-3zM19 17H5v-4.66l.12-.34h13.77l.11.34V17z"/></svg>`
+                },
+                {
+                    id: "autobus",
+                    label: "Autobús",
+                    icon: `<svg viewBox="0 0 24 24"><path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11V6h14v5H5z"/></svg>`
+                },
+                {
+                    id: "tranvia",
+                    label: "Tranvía",
+                    icon: `<svg viewBox="0 0 24 24"><path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-4-4-8-4zm0 2c3.71 0 5.49.34 5.89 2H6.11c.4-1.66 2.18-2 5.89-2zM6 8h12v3H6V8zm0 5h12v2.5c0 .83-.67 1.5-1.5 1.5h-9c-.83 0-1.5-.67-1.5-1.5V13z"/></svg>`
+                },
+                {
+                    id: "tren",
+                    label: "Tren",
+                    icon: `<svg viewBox="0 0 24 24"><path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-4-4-8-4zm0 2c3.86 0 6 .34 6 2H6c0-1.66 2.14-2 6-2zM6 8h12v4H6V8zm1.5 9c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>`
+                },
+                {
+                    id: "motocicleta",
+                    label: "Motocicleta",
+                    icon: `<svg viewBox="0 0 24 24"><path d="M19.41 7.41l-4.83-4.83c-.37-.37-.88-.58-1.41-.58H10c-1.1 0-2 .9-2 2 0 .35.1.68.27.97L5.42 7.15C3.99 7.73 3 9.24 3 11c0 2.21 1.79 4 4 4 1.86 0 3.41-1.28 3.86-3h3.28c.45 1.72 2 3 3.86 3 2.21 0 4-1.79 4-4 0-1.76-0.99-3.27-2.42-3.85zM7 13c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm10 0c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>`
+                },
+                {
+                    id: "coche_doble",
+                    label: "Coche de doble ocupación",
+                    icon: `<svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.04 3H5.81l1.04-3zM19 17H5v-4.66l.12-.34h13.77l.11.34V17z"/></svg>`
+                },
+                {
+                    id: "tesla_electrica",
+                    label: "Modelo S Tesla (Energía eléctrica)",
+                    icon: `<svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.04 3H5.81l1.04-3zM19 17H5v-4.66l.12-.34h13.77l.11.34V17z"/></svg>`
+                },
+                {
+                    id: "auto_promedio",
+                    label: "Automóvil promedio",
+                    icon: `<svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.04 3H5.81l1.04-3zM19 17H5v-4.66l.12-.34h13.77l.11.34V17z"/></svg>`
+                }
+            ];
+
+            let currentItems = [...correctOrderData].sort(() => Math.random() - 0.5);
+            let isChecked = false;
+            let draggedIndex = null;
+
+            // Renderizado con la estructura exacta de los quizzes del sitio
+            container.innerHTML = `
+        <div class="quiz-wrapper">
+            <div class="quiz-progress-track" style="display:block"><div class="quiz-progress-fill" style="width:100%"></div></div>
+            <div class="quiz-screen quiz-active screen-question">
+                <div class="quiz-card">
+                    <div class="quiz-body">
+                        <div class="type-badge"><span class="dot"></span><span class="q-type-badge">Arrastrar y soltar</span></div>
+                        <div class="question-label">Pregunta 1</div>
+                        <h2 class="question-text">Organiza los medios de transporte de menos (1) a más (11) contaminante.</h2>
+                        
+                        <div class="kanban-ranking-container" id="kanban-ranking-list"></div>
+                        <div class="feedback-bar" id="kanban-feedback"></div>
+                    </div>
+                    <div class="quiz-footer">
+                        <div class="step-info"><strong>1</strong> / <strong>1</strong></div>
+                        <div class="d-flex gap-2">
+                            <button id="btn-restart-kanban" class="quiz-btn quiz-btn-primary btn-restart d-none align-items-center justify-content-center" style="background-color: var(--accent, #BBC447); color: var(--ink, #202128);">
+                                Reintentar
+                                <span class="icono-btn" style="background-color: #F1F1F1; border-radius: 100%; width: 22px; height: 22px; display: inline-grid; align-items: center; justify-content: center; margin-left: 10px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                      <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/>
+                                      <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"/>
+                                    </svg>
+                                </span>
+                            </button>
+                            <button id="btn-check-kanban" class="quiz-btn quiz-btn-primary">
+                                <span>Comprobar</span>
+                                <span class="icono-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/></svg></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+            const listContainer = container.querySelector("#kanban-ranking-list");
+            const checkBtn = container.querySelector("#btn-check-kanban");
+            const restartBtn = container.querySelector("#btn-restart-kanban");
+            const feedbackBar = container.querySelector("#kanban-feedback");
+
+            function renderIcon(iconData) {
+                if (iconData.trim().startsWith("<svg")) {
+                    return iconData;
+                } else {
+                    return `<img src="${iconData}" alt="">`;
+                }
+            }
+
+            function renderList() {
+                listContainer.innerHTML = "";
+                currentItems.forEach((item, index) => {
+                    const card = document.createElement("div");
+                    card.className = "kanban-option-card d-flex align-items-center justify-content-between p-4";
+                    card.setAttribute("draggable", !isChecked);
+                    card.dataset.index = index;
+
+                    card.innerHTML = `
+                <div class="d-flex align-items-center gap-3">
+                    <div class="option-key">${index + 1}</div>
+                    <div class="transport-icon-box">${renderIcon(item.icon)}</div>
+                    <span class="text-dark" style="font-size: 0.95rem;">${item.label}</span>
+                </div>
+            `;
+
+                    // Soporte de Arrastre Táctil y de Escritorio fluida
+                    if (!isChecked) {
+                        let touchStartY = 0;
+                        let activeCard = null;
+
+                        card.addEventListener("touchstart", (e) => {
+                            touchStartY = e.touches[0].clientY;
+                            draggedIndex = index;
+                            activeCard = card;
+                            card.classList.add("dragging");
+                        }, { passive: true });
+
+                        card.addEventListener("touchmove", (e) => {
+                            if (!activeCard) return;
+                            const currentY = e.touches[0].clientY;
+                            const targetElement = document.elementFromPoint(e.clientX || e.touches[0].clientX, currentY);
+                            const siblingCard = targetElement?.closest(".kanban-option-card");
+
+                            listContainer.querySelectorAll(".kanban-option-card").forEach(el => {
+                                el.classList.remove("drag-over-top", "drag-over-bottom");
+                            });
+
+                            if (siblingCard && siblingCard !== activeCard) {
+                                const rect = siblingCard.getBoundingClientRect();
+                                if (currentY < rect.top + rect.height / 2) {
+                                    siblingCard.classList.add("drag-over-top");
+                                } else {
+                                    siblingCard.classList.add("drag-over-bottom");
+                                }
+                            }
+                        }, { passive: true });
+
+                        card.addEventListener("touchend", (e) => {
+                            if (!activeCard) return;
+                            const endY = e.changedTouches[0].clientY;
+                            const targetElement = document.elementFromPoint(e.clientX || e.changedTouches[0].clientX, endY);
+                            const siblingCard = targetElement?.closest(".kanban-option-card");
+
+                            if (siblingCard && siblingCard !== activeCard) {
+                                const targetIndex = parseInt(siblingCard.dataset.index);
+                                const movedItem = currentItems.splice(draggedIndex, 1)[0];
+                                currentItems.splice(targetIndex, 0, movedItem);
+                                renderList();
+                            }
+
+                            activeCard.classList.remove("dragging");
+                            activeCard = null;
+                            draggedIndex = null;
+                            listContainer.querySelectorAll(".kanban-option-card").forEach(el => {
+                                el.classList.remove("drag-over-top", "drag-over-bottom");
+                            });
+                        });
+
+                        // Arrastrar con mouse (Escritorio)
+                        card.addEventListener("dragstart", (e) => {
+                            draggedIndex = index;
+                            e.dataTransfer.effectAllowed = "move";
+                            setTimeout(() => card.classList.add("dragging"), 0);
+                        });
+
+                        card.addEventListener("dragend", () => {
+                            card.classList.remove("dragging");
+                            listContainer.querySelectorAll(".kanban-option-card").forEach(el => {
+                                el.classList.remove("drag-over-top", "drag-over-bottom");
+                            });
+                        });
+
+                        card.addEventListener("dragover", (e) => {
+                            e.preventDefault();
+                            if (draggedIndex === null || draggedIndex === index) return;
+                            const rect = card.getBoundingClientRect();
+                            const midpoint = rect.top + rect.height / 2;
+
+                            listContainer.querySelectorAll(".kanban-option-card").forEach(el => {
+                                el.classList.remove("drag-over-top", "drag-over-bottom");
+                            });
+
+                            if (e.clientY < midpoint) {
+                                card.classList.add("drag-over-top");
+                            } else {
+                                card.classList.add("drag-over-bottom");
+                            }
+                        });
+
+                        card.addEventListener("drop", (e) => {
+                            e.preventDefault();
+                            if (draggedIndex === null) return;
+                            const rect = card.getBoundingClientRect();
+                            const midpoint = rect.top + rect.height / 2;
+                            let targetIndex = index;
+
+                            if (e.clientY >= midpoint && draggedIndex < index) {
+                                targetIndex = index;
+                            } else if (e.clientY < midpoint && draggedIndex > index) {
+                                targetIndex = index;
+                            } else if (e.clientY >= midpoint && draggedIndex > index) {
+                                targetIndex = index;
+                            }
+
+                            const movedItem = currentItems.splice(draggedIndex, 1)[0];
+                            currentItems.splice(targetIndex, 0, movedItem);
+                            draggedIndex = null;
+                            renderList();
+                        });
+                    }
+
+                    listContainer.appendChild(card);
+                });
+            }
+
+            renderList();
+
+            checkBtn.addEventListener("click", () => {
+                if (isChecked) return;
+                isChecked = true;
+                checkBtn.classList.add("d-none");
+                restartBtn.classList.remove("d-none");
+                restartBtn.classList.add("d-inline-flex");
+
+                let allCorrect = true;
+                currentItems.forEach((item, idx) => {
+                    if (item.id !== correctOrderData[idx].id) {
+                        allCorrect = false;
+                    }
+                });
+
+                renderList();
+
+                feedbackBar.style.display = "block";
+                feedbackBar.className = `feedback-bar ${allCorrect ? 'correct' : 'incorrect'}`;
+                feedbackBar.innerHTML = `
+            <strong>${allCorrect ? '¡Correcto!' : 'Incorrecto.'}</strong>
+            <p>${allCorrect ? 'Has ordenado perfectamente todos los medios de transporte de menos a más contaminante[cite: 3].' : 'Revisa la clasificación. A continuación se compara tu orden con el de la lectura.'}</p>
+            <div class="comparison-results-grid">
+                <div class="p-3 border rounded-3 bg-white">
+                    <h6 class="fw-bold text-dark mb-2 small text-uppercase">Tu Orden:</h6>
+                    <ol class="ps-3 mb-0 small text-secondary">
+                        ${currentItems.map(i => `<li>${i.label}</li>`).join('')}
+                    </ol>
+                </div>
+                <div class="p-3 border rounded-3 bg-success-subtle border-success">
+                    <h6 class="fw-bold text-success mb-2 small text-uppercase">Orden Correcto (Infografía):</h6>
+                    <ol class="ps-3 mb-0 small text-success-emphasis">
+                        ${correctOrderData.map(i => `<li>${i.label}</li>`).join('')}
+                    </ol>
+                </div>
+            </div>
+        `;
+            });
+
+            restartBtn.addEventListener("click", () => {
+                isChecked = false;
+                currentItems = [...correctOrderData].sort(() => Math.random() - 0.5);
+                checkBtn.classList.remove("d-none");
+                restartBtn.classList.add("d-none");
+                feedbackBar.style.display = "none";
+                feedbackBar.innerHTML = "";
+                renderList();
+            });
+        });
+    </script>
 
 </body>
 
