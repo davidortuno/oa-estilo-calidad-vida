@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initScrollProgress();
   initShareTooltips();
   initSocialPopups();
+  initMasonry();
 });
 
 /**
@@ -116,25 +117,59 @@ function initShareTooltips() {
  */
 function initSocialPopups() {
   // Seleccionamos solo los enlaces a los que les agregamos la clase 'js-share-popup' en el HTML
-  const shareLinks = document.querySelectorAll('.js-share-popup');
+  const shareLinks = document.querySelectorAll(".js-share-popup");
 
-  shareLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault(); 
-      
+  shareLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
       const url = this.href;
       const popupWidth = 600;
       const popupHeight = 500;
-      
+
       // Cálculo para centrar el popup dinámicamente según la pantalla del usuario
-      const left = (window.innerWidth / 2) - (popupWidth / 2) + window.screenX;
-      const top = (window.innerHeight / 2) - (popupHeight / 2) + window.screenY;
+      const left = window.innerWidth / 2 - popupWidth / 2 + window.screenX;
+      const top = window.innerHeight / 2 - popupHeight / 2 + window.screenY;
 
       window.open(
         url,
-        'shareWindow',
-        `width=${popupWidth},height=${popupHeight},left=${left},top=${top},toolbar=0,location=0,menubar=0,scrollbars=1,resizable=1`
+        "shareWindow",
+        `width=${popupWidth},height=${popupHeight},left=${left},top=${top},toolbar=0,location=0,menubar=0,scrollbars=1,resizable=1`,
       );
     });
+  });
+}
+
+/**
+ * Inicialización segura de Masonry con imagesLoaded para contenedores responsivos
+ */
+function initMasonry() {
+  const grid = document.querySelector("[data-masonry]");
+  if (!grid) return;
+
+  // Validar que las librerías estén disponibles en el scope global
+  if (typeof imagesLoaded === "undefined" || typeof Masonry === "undefined") {
+    console.warn("Faltan las librerías Masonry o imagesLoaded.");
+    return;
+  }
+
+  // Extraer las opciones configuradas en el atributo data-masonry del HTML
+  let options = {};
+  const dataAttr = grid.getAttribute("data-masonry");
+  if (dataAttr) {
+    try {
+      options = JSON.parse(dataAttr);
+    } catch (e) {
+      console.error("Error al parsear el JSON de data-masonry:", e);
+    }
+  }
+
+  // Evitamos que Masonry ejecute su auto-init nativo antes de tiempo removiendo temporalmente el atributo
+  grid.removeAttribute("data-masonry");
+
+  // Esperamos a que todas las imágenes responsivas terminen de cargar y calcular su alto real
+  imagesLoaded(grid, function () {
+    // Inicializamos la instancia de Masonry de forma controlada
+    new Masonry(grid, options);
   });
 }
